@@ -10,14 +10,19 @@
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<div class="page">
-
-  <div class="topbar">
-    <a href="/">← Keyword Research</a>
-    <span>Theme 12 · Page optimization</span>
+<div class="daydream-bar">
+    <div class="dd-logo"></div>
+    <span class="divider">|</span>
+    <a href="/">Keyword Research</a>
+    <span class="divider">/</span>
+    <span class="current">/integrations/openai</span>
+    <div class="tabs">
+      <a class="tab active">Changes</a>
+      <a class="tab" href="/mockup-integrations-openai.html">Mockup</a>
+    </div>
   </div>
 
-  <header class="hero">
+<div class="page">  <header class="hero">
     <div class="gradient-rule"></div>
     <div class="eyebrow">Page optimization mockup</div>
     <h1 class="url-headline">/integrations/openai</h1>
@@ -65,100 +70,22 @@
   <section class="section">
     <div class="section-header">
       <span class="section-eyebrow">Step 03</span>
-      <h2>How the page reads after the changes ship</h2>
-      <p class="section-sub">A scroll through the proposed /integrations/openai page on exa.ai.</p>
+      <h2>See the page rendered with every change in place</h2>
+      <p class="section-sub">The mockup is a full visual preview of the proposed page, rendered like exa.ai. Every section is labeled Keep, Modify, or New so you can scroll through and review changes in context.</p>
     </div>
 
-    <div class="legend">
-      <span class="legend-item legend-keep"><span class="dot"></span>Keep</span>
-      <span class="legend-item legend-modify"><span class="dot"></span>Modify</span>
-      <span class="legend-item legend-new"><span class="dot"></span>New</span>
-    </div>
-
-    <div class="mock-page">
-      <div class="mock-chrome">
-        <div class="mock-dots"><span></span><span></span><span></span></div>
-        <div class="mock-url">exa.ai/integrations/openai</div>
-        <div class="mock-tab">OpenAI Web Search Tool with Exa, Integration Guide</div>
+    <a href="/mockup-integrations-openai.html" class="view-mockup-cta" style="text-decoration:none">
+      <div class="body">
+        <div class="lbl">Mockup view</div>
+        <div class="text">Open the standalone /integrations/openai mockup</div>
       </div>
-      <div class="mock-nav">
-        <div class="mock-nav-logo">exa</div>
-        <div class="mock-nav-links"><span>Products</span><span>Resources</span><span>Pricing</span><span>Blog</span><span>Docs</span></div>
-        <div class="mock-nav-cta"><span class="signin">Sign in</span><a class="mock-btn-primary">Try API for free</a></div>
-      </div>
-
-      <div class="mock-section s-modify">
-        <span class="mock-status s-modify">Modify · H1</span>
-        <h1>OpenAI Web Search Tool with Exa</h1>
-        <p class="sub">Add real time web search to GPT-4o and the Assistants API in 3 lines of code.</p>
-        <div class="ctas">
-          <a class="mock-btn-primary">Try API for free</a>
-          <a class="mock-btn-secondary">Tool calling guide</a>
-        </div>
-      </div>
-
-      <div class="mock-section s-new">
-        <span class="mock-status s-new">New section</span>
-        <h2>Quickstart in 3 lines</h2>
-        <p>The Exa SDK ships the OpenAI function spec for you. Dev visits cold, sees the snippet, ships in 5 minutes.</p>
-        <div class="mock-code">from openai import OpenAI
-from exa_py import Exa
-
-openai = OpenAI()
-exa = Exa(api_key="...")
-
-# Register Exa as an OpenAI tool
-tools = [exa.openai_tool()]
-
-response = openai.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "What launched today in AI?"}],
-    tools=tools,
-)</div>
-      </div>
-
-      <div class="mock-section s-new">
-        <span class="mock-status s-new">New section</span>
-        <h2>How to add OpenAI web search with Exa</h2>
-        <p>HowTo schema attached. Three steps eligible for rich result.</p>
-        <p><b>Step 1.</b> Install the SDKs. <code>pip install openai exa_py</code></p>
-        <p><b>Step 2.</b> Register the Exa tool with your OpenAI client. <code>exa.openai_tool()</code></p>
-        <p><b>Step 3.</b> Call <code>chat.completions.create</code> with <code>tools=tools</code> and let GPT-4o trigger the search when it needs the web.</p>
-      </div>
-
-      <div class="mock-section s-modify">
-        <span class="mock-status s-modify">Modify</span>
-        <h2>Overview</h2>
-        <p class="gray">Trimmed from a generic marketing block to one paragraph answering: what does adding Exa to OpenAI actually give me? Token efficient highlights, full page content, p95 1.7s latency, 1,200 domain filters.</p>
-      </div>
-
-      <div class="mock-section s-modify">
-        <span class="mock-status s-modify">Rename</span>
-        <h2>Docs, SDK, and examples</h2>
-        <p class="gray">Was &ldquo;Quick links&rdquo;. Three CTAs: Tool calling guide, Python SDK quickstart, sample repo on GitHub.</p>
-      </div>
-
-      <div class="mock-section s-modify">
-        <span class="mock-status s-modify">Rename</span>
-        <h2>Other LLM integrations</h2>
-        <p class="gray">Was &ldquo;Related partners&rdquo;. Cross link to /integrations/anthropic, /integrations/langchain, /integrations/mcp. Strengthens the topical cluster.</p>
-      </div>
-
-      <div class="mock-section s-new">
-        <span class="mock-status s-new">New section</span>
-        <h2>Frequently asked questions</h2>
-        <div class="mock-faq">
-          <details open><summary>Does OpenAI have a built in web search API?</summary><p>OpenAI ships browsing inside ChatGPT but the API does not have a first party web search endpoint. Use a search tool like Exa.</p></details>
-          <details><summary>How do I add web search to GPT-4o?</summary><p>Call <code>exa.openai_tool()</code> and pass the result as a tool in your OpenAI chat completion. GPT-4o decides when to call it.</p></details>
-          <details><summary>What does the OpenAI plus Exa integration cost?</summary><p>OpenAI tokens at OpenAI rates plus Exa per request pricing. Most agents land under $0.02 per turn.</p></details>
-          <details><summary>Can I use Exa with the OpenAI Assistants API?</summary><p>Yes. Register Exa as a function tool on the assistant.</p></details>
-          <details><summary>How does Exa's OpenAI integration compare to Tavily?</summary><p>Same call signature pattern. Exa wins on latency and full page content. See /versus/tavily.</p></details>
-          <details><summary>Does Exa support streaming responses with OpenAI?</summary><p>Yes. Streaming flows through OpenAI's stream and the Exa tool call resolves inline.</p></details>
-        </div>
-      </div>
-
-    </div>
+      <span>
+        Open mockup
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-left: 6px"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </span>
+    </a>
   </section>
+
 
   <section class="section">
     <div class="section-header">

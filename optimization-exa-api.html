@@ -10,14 +10,19 @@
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<div class="page">
-
-  <div class="topbar">
-    <a href="/">← Keyword Research</a>
-    <span>Theme 1 · Page optimization</span>
+<div class="daydream-bar">
+    <div class="dd-logo"></div>
+    <span class="divider">|</span>
+    <a href="/">Keyword Research</a>
+    <span class="divider">/</span>
+    <span class="current">/exa-api</span>
+    <div class="tabs">
+      <a class="tab active">Changes</a>
+      <a class="tab" href="/mockup-exa-api.html">Mockup</a>
+    </div>
   </div>
 
-  <header class="hero">
+<div class="page">  <header class="hero">
     <div class="gradient-rule"></div>
     <div class="eyebrow">Page optimization mockup</div>
     <h1 class="url-headline">/exa-api</h1>
@@ -81,167 +86,24 @@
     </div>
   </section>
 
-  <!-- Step 03 · Page preview ─────────────────────────── -->
+  <!-- Step 03 · View the mockup ─────────────────────── -->
   <section class="section">
     <div class="section-header">
       <span class="section-eyebrow">Step 03</span>
-      <h2>How the page reads after the changes ship</h2>
-      <p class="section-sub">A scroll through the proposed page on exa.ai. Each block shows its status. The copy you see is what would render live.</p>
+      <h2>See the page rendered with every change in place</h2>
+      <p class="section-sub">The mockup is a full visual preview of the proposed page, rendered like exa.ai. Every section is labeled Keep, Modify, or New so you can scroll through and review changes in context.</p>
     </div>
 
-    <div class="legend">
-      <span class="legend-item legend-keep"><span class="dot"></span>Keep</span>
-      <span class="legend-item legend-modify"><span class="dot"></span>Modify</span>
-      <span class="legend-item legend-new"><span class="dot"></span>New</span>
-    </div>
-
-    <div class="mock-page">
-
-      <div class="mock-chrome">
-        <div class="mock-dots"><span></span><span></span><span></span></div>
-        <div class="mock-url">exa.ai/exa-api</div>
-        <div class="mock-tab">Web Search API for AI Agents and LLMs, Exa</div>
+    <a href="/mockup-exa-api.html" class="view-mockup-cta" style="text-decoration:none">
+      <div class="body">
+        <div class="lbl">Mockup view</div>
+        <div class="text">Open the standalone /exa-api mockup</div>
       </div>
-
-      <div class="mock-nav">
-        <div class="mock-nav-logo">exa</div>
-        <div class="mock-nav-links">
-          <span>Products</span><span>Resources</span><span>Pricing</span><span>Blog</span><span>Docs</span>
-        </div>
-        <div class="mock-nav-cta">
-          <span class="signin">Sign in</span>
-          <a class="mock-btn-primary">Try API for free</a>
-        </div>
-      </div>
-
-      <!-- Hero: Modify -->
-      <div class="mock-section s-modify">
-        <span class="mock-status s-modify">Modify · H1</span>
-        <h1>Web Search API for AI Agents</h1>
-        <p class="sub">The web, organized for agents. One API for search, crawling, and research.</p>
-        <div class="ctas">
-          <a class="mock-btn-primary">Try API for free</a>
-          <a class="mock-btn-secondary">Read the docs</a>
-        </div>
-      </div>
-
-      <!-- Definition block: New -->
-      <div class="mock-section s-new">
-        <span class="mock-status s-new">New section</span>
-        <h2>What is a web search API?</h2>
-        <p>A web search API is a programmatic interface that returns ranked results from a live index of the public web. Unlike scraping a search engine, a web search API exposes its own retrieval layer, including filters, freshness controls, and structured outputs, so AI agents and applications can pull data without rendering a browser or rotating proxies.</p>
-        <p>Exa's web search API runs on a neural index of over a billion pages, returns p95 in under 1.7 seconds, and supports 1,200 domain filters.</p>
-      </div>
-
-      <!-- Search built for your AI: Modify -->
-      <div class="mock-section s-modify">
-        <span class="mock-status s-modify">Modify · H2</span>
-        <h2>Web search API built for your AI</h2>
-        <p class="gray">Existing content kept. H2 renamed from &ldquo;Search built for your AI&rdquo; to surface the head term variant at the top of the section.</p>
-      </div>
-
-      <!-- Imagine perfect search: Keep -->
-      <div class="mock-section s-keep">
-        <span class="mock-status s-keep">Keep</span>
-        <h2>Imagine a world with perfect search</h2>
-        <p class="gray">Existing brand narrative copy. Unchanged.</p>
-      </div>
-
-      <!-- Search API designed: Modify -->
-      <div class="mock-section s-modify">
-        <span class="mock-status s-modify">Modify · H2</span>
-        <h2>Web search API designed to make your agent smarter</h2>
-        <p class="gray">Existing content. H2 renamed from &ldquo;Search API, Designed to make your Agent smarter&rdquo; to drop the em dash and add the head term variant.</p>
-      </div>
-
-      <!-- Use cases: New -->
-      <div class="mock-section s-new">
-        <span class="mock-status s-new">New section</span>
-        <h2>Use cases</h2>
-        <p>Three priority segments, each with a dedicated hub. Anchor accounts shown.</p>
-        <div class="mock-use-cases">
-          <div class="mock-card">
-            <div class="logo">Cursor · Vercel · Replit</div>
-            <h3>Coding agents</h3>
-            <p>Code documentation search inside the agent loop. Token efficient retrieval that catches LLM hallucinations.</p>
-            <span class="link">/solutions/coding-agents →</span>
-          </div>
-          <div class="mock-card">
-            <div class="logo">Notion AI · Anthropic · LangChain</div>
-            <h3>AI agents and RAG</h3>
-            <p>Plug Exa into any LLM agent or RAG pipeline. Neural retrieval, full page content, MCP compatible.</p>
-            <span class="link">/solutions/ai-agents →</span>
-          </div>
-          <div class="mock-card">
-            <div class="logo">HubSpot · Monday.com · Clay</div>
-            <h3>GTM intelligence</h3>
-            <p>Search a billion plus companies and people by role, industry, and signals. Beyond keyword filters.</p>
-            <span class="link">/solutions/gtm-intelligence →</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Benchmarks: Keep -->
-      <div class="mock-section s-keep">
-        <span class="mock-status s-keep">Keep</span>
-        <h2>Benchmarks. Highest quality search at every latency.</h2>
-        <p class="gray">Existing benchmark tables, latency charts, highlights, and search verticals. Best content on the page. Add internal link anchors to /versus/* and /integrations/* where natural.</p>
-        <div class="mock-benchmark">
-          <table>
-            <thead><tr><th>Benchmark</th><th class="right">Exa</th><th class="right">Perplexity</th><th class="right">Brave</th></tr></thead>
-            <tbody>
-              <tr class="win"><td>FRAMES</td><td class="right">54.4%</td><td class="right">44.5%</td><td class="right">21.6%</td></tr>
-              <tr><td>Latency p95</td><td class="right">1.7s</td><td class="right">5.1s</td><td class="right">2.4s</td></tr>
-              <tr><td>Exa Instant</td><td class="right">180ms</td><td class="right">·</td><td class="right">·</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Trust signals: Keep -->
-      <div class="mock-section s-keep tint">
-        <span class="mock-status s-keep">Keep</span>
-        <h2>Trusted by world class teams</h2>
-        <div class="mock-customer-row">
-          <span class="lbl">Customers</span>
-          <span>Cognition</span><span>HubSpot</span><span>monday.com</span><span>CodeRabbit</span><span>OpenRouter</span><span>Notion AI</span>
-        </div>
-      </div>
-
-      <!-- FAQ: New -->
-      <div class="mock-section s-new">
-        <span class="mock-status s-new">New section</span>
-        <h2>Frequently asked questions</h2>
-        <p>FAQPage schema attached so Google and AI overviews can cite each answer directly.</p>
-        <div class="mock-faq">
-          <details open>
-            <summary>What is a web search API?</summary>
-            <p>A web search API is a programmatic interface that returns ranked results from a live index of the public web. Unlike scraping a search engine, a web search API exposes its own retrieval layer (filters, freshness, structured outputs) so AI agents can pull data without rendering a browser or rotating proxies.</p>
-          </details>
-          <details>
-            <summary>How does Exa's web search API work?</summary>
-            <p>Exa runs on a neural index of over a billion pages. Results are ranked by meaning, not by keyword overlap with a SERP.</p>
-          </details>
-          <details>
-            <summary>How is Exa different from Tavily, Brave, and SerpAPI?</summary>
-            <p>p95 latency under 1.7s versus 3.8s to 5.1s for keyword based competitors on the WebWalker benchmark. Forward links to /versus/tavily, /versus/brave, /versus/serpapi for each comparison.</p>
-          </details>
-          <details>
-            <summary>What is the latency for Exa's web search API?</summary>
-            <p>p95 under 1.7 seconds across modes. Exa Instant returns in under 180 milliseconds for time critical agents.</p>
-          </details>
-          <details>
-            <summary>Does Exa's web search API return real time data?</summary>
-            <p>Yes. Live web index with freshness controls. Filter by published date, by domain (1,200 supported), or by category.</p>
-          </details>
-          <details>
-            <summary>Which AI agents and LLM frameworks integrate with Exa?</summary>
-            <p>OpenAI, Anthropic, LangChain, LlamaIndex, CrewAI, and Model Context Protocol (MCP). One line integration for each.</p>
-          </details>
-        </div>
-      </div>
-
-    </div>
+      <span>
+        Open mockup
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-left: 6px"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </span>
+    </a>
   </section>
 
   <!-- Step 04 · Keyword instances ───────────────── -->

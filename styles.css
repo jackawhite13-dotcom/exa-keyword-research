@@ -934,6 +934,129 @@ pre {
 /* Anchor flash for jump-to */
 .theme.flash, .panel.flash { box-shadow: 0 0 0 4px rgba(255, 213, 87, 0.4); transition: box-shadow 0.6s ease; }
 
+/* ── Sticky daydream chrome (over a standalone mockup) ─ */
+.daydream-bar {
+  position: sticky; top: 0; z-index: 100;
+  background: #1C1C1E;
+  padding: 10px 24px;
+  display: flex; align-items: center; gap: 16px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.daydream-bar .dd-logo {
+  width: 26px; height: 26px;
+  border-radius: 7px;
+  background: var(--gradient);
+  flex-shrink: 0;
+}
+.daydream-bar .divider { color: rgba(255,255,255,0.18); }
+.daydream-bar a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  transition: color 0.15s ease;
+}
+.daydream-bar a:hover { color: #C3F2D0; }
+.daydream-bar .current {
+  color: white; font-weight: 700;
+}
+.daydream-bar .tabs {
+  margin-left: auto;
+  display: flex; gap: 4px;
+  background: rgba(255,255,255,0.08);
+  padding: 4px; border-radius: 100px;
+}
+.daydream-bar .tab {
+  font-size: 12px; font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  padding: 6px 14px; border-radius: 100px;
+  text-decoration: none; border: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.daydream-bar .tab.active {
+  background: white; color: var(--ink);
+}
+.daydream-bar .tab:hover:not(.active) { color: white; }
+
+/* ── Mockup body (when standalone) ──────────────────── */
+body.mockup-body { background: #FFFFFF; }
+.mockup-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.mockup-wrap .mock-page {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  margin-top: 0;
+}
+.mockup-wrap .mock-page::before { display: none; }
+.mockup-wrap .mock-chrome { display: none; }
+.mockup-wrap .mock-section { padding: 80px 64px; }
+
+/* CTA banner that links draft → mockup */
+.view-mockup-cta {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px;
+  background: var(--ink);
+  color: white;
+  border-radius: 14px;
+  padding: 20px 28px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-soft);
+}
+.view-mockup-cta .body {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.view-mockup-cta .lbl {
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.view-mockup-cta .text {
+  font-size: 15px; font-weight: 500;
+  color: white; line-height: 1.4;
+}
+.view-mockup-cta a {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 18px; border-radius: 100px;
+  background: white; color: var(--ink);
+  font-size: 13px; font-weight: 600;
+  border: none;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.view-mockup-cta a:hover { background: var(--accent-green); color: var(--accent-green-ink); }
+.view-mockup-cta a svg { flex-shrink: 0; }
+
+/* ── Exa-styled hero accents ─────────────────────────── */
+.mock-section.exa-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 60% at 75% 30%, rgba(195, 242, 208, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 20% 80%, rgba(254, 227, 204, 0.30) 0%, transparent 55%),
+    #FFFFFF;
+}
+.mock-section.exa-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 30% 30%, rgba(28, 28, 30, 0.04) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 70% 60%, rgba(28, 28, 30, 0.03) 1.5px, transparent 1.5px);
+  background-size: 32px 32px, 28px 28px;
+  background-position: 0 0, 16px 16px;
+  pointer-events: none;
+}
+.mock-section.exa-hero > * { position: relative; z-index: 1; }
+
+.mock-section.exa-hero h1 {
+  font-size: 60px;
+  letter-spacing: -0.028em;
+}
+
 /* ── Mock page preview (mockup sub-pages) ───────────── */
 .mock-page {
   background: #FFFFFF;
