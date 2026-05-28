@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Exa × daydream — Keyword Research (Initial)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FFF9F4;
+  --offwhite: #FFFFFB;
+  --near-black: #232323;
+  --gray: #454545;
+  --subtle: #6B655F;
+  --border: #E8E2DC;
+  --soft-border: #F0EBE4;
+  --green: #C3F2D0;
+  --green-d: #14532d;
+  --blue: #D0F2FF;
+  --blue-d: #0c4a6e;
+  --amber: #FFECDB;
+  --amber-d: #d97706;
+  --red: #FFCADF;
+  --red-d: #b91c1c;
+  --purple: #F7E8FD;
+  --purple-d: #7c3aed;
+  --gradient: linear-gradient(90deg, #C3F2D0 0%, #B3EAFF 53%, #FEE3CC 100%);
+}
+* { box-sizing: border-box; }
+html, body { background: var(--cream); }
+body { font-family: 'Raleway', system-ui, -apple-system, sans-serif; color: var(--near-black); margin: 0; padding: 0; font-size: 13.5px; line-height: 1.55; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 32px 24px 64px; }
+
+/* Header */
+.header { padding: 28px 0 20px; border-bottom: 1px solid var(--border); margin-bottom: 24px; position: relative; }
+.header::before { content: ""; display: block; height: 3px; background: var(--gradient); border-radius: 2px; margin-bottom: 18px; max-width: 120px; }
+.logo { display: inline-block; font-weight: 700; letter-spacing: 0.2px; }
+.eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--subtle); margin-bottom: 8px; }
+h1 { font-size: 26px; font-weight: 700; margin: 0 0 6px; }
+.subtitle { font-size: 13.5px; color: var(--gray); max-width: 760px; line-height: 1.55; }
+.meta { font-size: 11px; color: var(--subtle); margin-top: 10px; }
+.meta span { margin-right: 14px; }
+
+/* Section */
+.section { margin: 36px 0 20px; }
+.section-title { font-size: 16px; font-weight: 700; margin: 0 0 4px; }
+.section-sub { font-size: 12.5px; color: var(--gray); margin: 0 0 14px; max-width: 820px; }
+
+/* Coverage table */
+.cov-table { width: 100%; border-collapse: collapse; background: var(--offwhite); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.cov-table th, .cov-table td { font-size: 12px; text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.cov-table th { background: var(--soft-border); font-weight: 700; color: var(--gray); letter-spacing: 0.3px; text-transform: uppercase; font-size: 10px; }
+.cov-table tr:last-child td { border-bottom: none; }
+.cov-table tr.cov-group td { background: #EDE6DC; font-weight: 700; }
+.cov-table td.notes { color: var(--gray); font-size: 11.5px; line-height: 1.5; }
+.cov-pill { display: inline-block; background: var(--soft-border); color: var(--gray); font-size: 9.5px; font-weight: 600; padding: 2px 7px; border-radius: 20px; letter-spacing: 0.3px; }
+.cov-pill.call { background: var(--blue); color: var(--blue-d); }
+.cov-pill.audit { background: var(--purple); color: var(--purple-d); }
+.cov-pill.notion { background: var(--amber); color: var(--amber-d); }
+.cov-kind { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: var(--soft-border); color: var(--gray); margin-right: 6px; text-transform: uppercase; letter-spacing: 0.4px; }
+
+/* Theme cards */
+.theme { background: var(--offwhite); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 14px; overflow: hidden; }
+.theme-head { padding: 14px 18px 12px; display: flex; align-items: flex-start; gap: 14px; flex-wrap: wrap; }
+.theme-num { display: inline-block; background: var(--gradient); color: var(--near-black); font-size: 9.5px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; flex-shrink: 0; }
+.theme-meta { flex: 1; min-width: 0; }
+.theme-primary { font-size: 16px; font-weight: 700; margin: 0; line-height: 1.3; }
+.theme-target { font-size: 11.5px; color: var(--gray); margin-top: 2px; }
+.theme-target code { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace; font-size: 11px; padding: 1px 5px; background: var(--soft-border); border-radius: 3px; color: var(--near-black); }
+.tbd { color: var(--amber-d); }
+.goal-badge { display: inline-flex; align-items: center; gap: 5px; padding: 4px 9px; border-radius: 20px; font-size: 10px; font-weight: 700; letter-spacing: 0.3px; flex-shrink: 0; }
+.goal-1 { background: var(--blue); color: var(--blue-d); }
+.goal-2 { background: var(--amber); color: var(--amber-d); }
+.goal-3 { background: var(--purple); color: var(--purple-d); }
+.goal-4 { background: var(--green); color: var(--green-d); }
+.goal-5 { background: var(--red); color: var(--red-d); }
+.theme-notes { padding: 0 18px 14px; font-size: 12.5px; color: var(--gray); line-height: 1.55; border-bottom: 1px solid var(--border); }
+
+/* Keyword table inside theme */
+.kw-table { width: 100%; border-collapse: collapse; }
+.kw-table th, .kw-table td { font-size: 12px; padding: 7px 14px; text-align: left; border-bottom: 1px solid var(--soft-border); }
+.kw-table th { background: var(--cream); font-weight: 700; color: var(--gray); font-size: 9.5px; letter-spacing: 0.5px; text-transform: uppercase; padding: 8px 14px; }
+.kw-table tr:last-child td { border-bottom: none; }
+.kw-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.kw-table .center { text-align: center; }
+.kw-table tr.primary td { font-weight: 700; background: #FFFCF7; }
+.kw-table tr.primary td:first-child { position: relative; }
+.kw-table tr.primary td:first-child::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--amber-d); }
+.badge-primary { display: inline-block; background: var(--amber-d); color: #fff; font-size: 8.5px; font-weight: 700; padding: 1.5px 6px; border-radius: 3px; letter-spacing: 0.4px; margin-right: 8px; vertical-align: middle; text-transform: uppercase; }
+.kd-pill { display: inline-block; font-size: 10.5px; font-weight: 600; padding: 1px 7px; border-radius: 10px; font-variant-numeric: tabular-nums; }
+.kd-low { background: #DCFCE7; color: #166534; }
+.kd-mid { background: var(--amber); color: var(--amber-d); }
+.kd-high { background: var(--red); color: var(--red-d); }
+.kd-na { background: var(--soft-border); color: var(--subtle); }
+
+/* Theme summary footer */
+.theme-foot { padding: 10px 18px; background: var(--cream); border-top: 1px solid var(--border); display: flex; gap: 24px; font-size: 11px; color: var(--gray); flex-wrap: wrap; }
+.theme-foot b { color: var(--near-black); font-weight: 700; }
+
+/* Legend / Goals key */
+.goals-key { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px; margin-bottom: 18px; }
+.goal-row { background: var(--offwhite); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; display: flex; gap: 10px; align-items: flex-start; }
+.goal-row .goal-badge { margin-top: 1px; }
+.goal-row .gt { font-size: 11.5px; font-weight: 600; line-height: 1.4; }
+.goal-row .gs { font-size: 10.5px; color: var(--gray); margin-top: 2px; line-height: 1.4; }
+
+/* footer */
+.foot { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); font-size: 11px; color: var(--subtle); text-align: center; }
+.foot .logo { color: var(--near-black); }
+
+/* anchor jump highlight */
+.theme.flash { box-shadow: 0 0 0 3px rgba(255, 213, 87, 0.6); transition: box-shadow 0.5s ease; }
+
+/* clickable cov rows */
+.cov-table tr.cov-clickable { cursor: pointer; }
+.cov-table tr.cov-clickable:hover td { background: #FFF7E6; }
+
+/* Roll-up totals */
+.totals { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin: 18px 0 4px; }
+.totals .card { background: var(--offwhite); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
+.totals .card .lbl { font-size: 9.5px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; color: var(--subtle); }
+.totals .card .val { font-size: 18px; font-weight: 700; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.totals .card .sub { font-size: 11px; color: var(--gray); margin-top: 1px; }
+
+@media (max-width: 720px) {
+  .header { padding: 18px 0 14px; }
+  h1 { font-size: 22px; }
+  .wrap { padding: 22px 14px 48px; }
+  .theme-head { gap: 8px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="header">
+  <div class="eyebrow"><span class="logo">daydream</span> · keyword research</div>
+  <h1>Exa Keyword Research — Initial</h1>
+  <div class="subtitle">
+    Themes built from the keywords Exa named on the strategy calls and the three priority ICP segments in the strategy audit. Each theme maps to one target page on exa.ai and one of the five goals from the audit. Volume and difficulty pulled from Ahrefs (US, May 2026). This is the input to Phase 1 — the campaign roadmap is built from this sheet.
+  </div>
+  <div class="meta">
+    <span><b>Pulled:</b> May 28, 2026</span>
+    <span><b>Source:</b> Ahrefs Keywords Explorer (US)</span>
+    <span><b>Themes:</b> 12</span>
+    <span><b>Status:</b> First pass — for review on the onboarding call</span>
+  </div>
+</header>
+
+<!-- Goals key ─────────────────────────────────── -->
+<section class="section">
+  <h2 class="section-title">The five goals every theme maps to</h2>
+  <p class="section-sub">From the strategy audit. Theme cards below carry a goal badge so the link from theme → goal is visible at a glance.</p>
+  <div class="goals-key">
+    <div class="goal-row"><span class="goal-badge goal-1">Goal 1</span><div><div class="gt">Be the first answer for product queries</div><div class="gs">web search api, ai search engine, search api</div></div></div>
+    <div class="goal-row"><span class="goal-badge goal-2">Goal 2</span><div><div class="gt">Capture competitor-comparison traffic</div><div class="gs">/versus pages: Tavily, Firecrawl, SerpAPI, Brave, Parallel, Perplexity API</div></div></div>
+    <div class="goal-row"><span class="goal-badge goal-3">Goal 3</span><div><div class="gt">Capture integration traffic</div><div class="gs">/integrations head-term optimization: OpenAI, LangChain, MCP</div></div></div>
+    <div class="goal-row"><span class="goal-badge goal-4">Goal 4</span><div><div class="gt">Own three use-case segments</div><div class="gs">Coding Agents, AI Infrastructure &amp; Agents, GTM Intelligence</div></div></div>
+    <div class="goal-row"><span class="goal-badge goal-5">Goal 5</span><div><div class="gt">Be the knowledge layer of the internet</div><div class="gs">/websets/directory — already strong; not the focus this pass</div></div></div>
+  </div>
+</section>
+
+<!-- Coverage check ─────────────────────────────── -->
+<section class="section">
+  <h2 class="section-title">Coverage check</h2>
+  <p class="section-sub">Everything Exa shared with us, mapped to where we&rsquo;ll target it. Click a row to jump to its theme below.</p>
+  <table class="cov-table">
+    <thead>
+      <tr><th style="width:36%">Input from Exa</th><th>Theme</th><th style="width:100px">Status</th><th style="width:240px">Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr class="cov-group"><td colspan="4">Call 1 · Jan 2026 <span class="cov-pill call">Call</span></td></tr>
+      <tr class="cov-clickable" data-jump="t1"><td><span class="cov-kind">ask</span>Rank for &ldquo;web search api&rdquo; (Scott — &ldquo;a money keyword&rdquo;)</td><td><b>web search api</b> · <code>/exa-api</code></td><td><span class="cov-pill" style="background:#DCFCE7;color:#166534">covered</span></td><td class="notes">Theme 1. Scott&rsquo;s named target term.</td></tr>
+      <tr class="cov-clickable" data-jump="t2"><td><span class="cov-kind">ask</span>Rank for &ldquo;ai search engine&rdquo;</td><td><b>ai search engine for developers</b> · <code class="tbd">TBD — /ai-search-engine</code></td><td><span class="cov-pill" style="background:#DCFCE7;color:#166534">covered</span></td><td class="notes">Theme 2. Head term is dominated by Perplexity (KD 81); we target the developer-segment of the SERP.</td></tr>
+
+      <tr class="cov-group"><td colspan="4">Call 2 · Apr 2026 <span class="cov-pill call">Call</span></td></tr>
+      <tr class="cov-clickable" data-jump="t3"><td><span class="cov-kind">priority</span>Three priority segments — AI coding agents (Cursor, Vercel)</td><td><b>search api for coding agents</b> · <code class="tbd">TBD — /solutions/coding-agents</code></td><td><span class="cov-pill" style="background:#DCFCE7;color:#166534">covered</span></td><td class="notes">Theme 3. Low primary volume; segment hub anchors on Cursor / Vercel / Replit.</td></tr>
+      <tr class="cov-clickable" data-jump="t4"><td><span class="cov-kind">priority</span>Three priority segments — AI infrastructure &amp; agents (Notion AI, Anthropic, LangChain)</td><td><b>llm search</b> · <code class="tbd">TBD — /solutions/ai-agents</code></td><td><span class="cov-pill" style="background:#DCFCE7;color:#166534">covered</span></td><td class="notes">Theme 4. Search-for-agents cluster; supports RAG / MCP / context-engineering terms.</td></tr>
+      <tr class="cov-clickable" data-jump="t5"><td><span class="cov-kind">priority</span>Three priority segments — GTM intelligence (HubSpot, Monday.com, Clay)</td><td><b>competitive intelligence tools</b> · <code class="tbd">TBD — /solutions/gtm-intelligence</code></td><td><span class="cov-pill" style="background:#DCFCE7;color:#166534">covered</span></td><td class="notes">Theme 5. Highest-ROI segment hub by volume.</td></tr>
+      <tr class="cov-clickable" data-jump="t6"><td><span class="cov-kind">competitor</span>Parallel — closest direct product competitor</td><td><b>parallel ai</b> · <code class="tbd">TBD — /versus/parallel</code></td><td><span class="cov-pill" style="background:#DCFCE7;color:#166534">covered</span></td><td class="notes">Theme 6.</td></tr>
+      <tr class="cov-clickable" data-jump="t7"><td><span class="cov-kind">competitor</span>Tavily — declining threat post-Nebius acquisition</td><td><b>tavily</b> · <code class="tbd">TBD — /versus/tavily</code></td><td><span class="cov-pill" style="background:#DCFCE7;color:#166534">covered</span></td><td class="notes">Theme 7. Largest brand volume in the comparison set after Firecrawl.</td></tr>
+      <tr class="cov-clickable" data-jump="t8"><td><span class="cov-kind">competitor</span>Firecrawl — beating Exa on commercial pages</td><td><b>firecrawl</b> · <code class="tbd">TBD — /versus/firecrawl</code></td><td><span class="cov-pill" style="background:#DCFCE7;color:#166534">covered</span></td><td class="notes">Theme 8. Highest brand volume of any direct competitor.</td></tr>
+      <tr class="cov-clickable" data-jump="t9"><td><span class="cov-kind">competitor</span>SerpAPI — traffic leader in the peer set</td><td><b>serpapi</b> · <code class="tbd">TBD — /versus/serpapi</code></td><td><span class="cov-pill" style="background:#DCFCE7;color:#166534">covered</span></td><td class="notes">Theme 9.</td></tr>
+      <tr class="cov-clickable" data-jump="t10"><td><span class="cov-kind">competitor</span>Brave Search API — currently outranking Exa on the head term</td><td><b>brave search api</b> · <code class="tbd">TBD — /versus/brave</code></td><td><span class="cov-pill" style="background:#DCFCE7;color:#166534">covered</span></td><td class="notes">Theme 10. Outranks Exa on Scott&rsquo;s head term today.</td></tr>
+      <tr class="cov-clickable" data-jump="t11"><td><span class="cov-kind">competitor</span>Perplexity API — overlap with new API offering</td><td><b>perplexity api</b> · <code class="tbd">TBD — /versus/perplexity-api</code></td><td><span class="cov-pill" style="background:#DCFCE7;color:#166534">covered</span></td><td class="notes">Theme 11.</td></tr>
+
+      <tr class="cov-group"><td colspan="4">Strategy audit · Apr 2026 <span class="cov-pill audit">Audit</span></td></tr>
+      <tr class="cov-clickable" data-jump="t1"><td><span class="cov-kind">goal</span>Goal 1 — Be the first answer for product queries</td><td><b>web search api</b> · <code>/exa-api</code></td><td><span class="cov-pill" style="background:#DCFCE7;color:#166534">covered</span></td><td class="notes">Theme 1 is the category hub for Goal 1.</td></tr>
+      <tr class="cov-clickable" data-jump="t12"><td><span class="cov-kind">goal</span>Goal 3 — Capture integration traffic (32 live pages with near-zero organic)</td><td><b>openai web search</b>, <b>langchain web search</b>, <b>mcp web search</b> · <code>/integrations/[brand]</code></td><td><span class="cov-pill" style="background:#DCFCE7;color:#166534">covered</span></td><td class="notes">Theme 12 covers integration head-term optimization. Three pages bundled into one theme because the playbook is the same.</td></tr>
+
+      <tr class="cov-group"><td colspan="4">Exa SEO/GEO Notion doc · Feb 2026 <span class="cov-pill notion">Notion</span></td></tr>
+      <tr><td><span class="cov-kind">reciprocity</span>Exa positions its API for SEO/GEO companies (six use cases)</td><td>Not a target page</td><td><span class="cov-pill" style="background:var(--soft-border);color:var(--gray)">relationship</span></td><td class="notes">Reciprocity angle for the conversation, not a target page. Daydream evaluating Exa as a research tool.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Roll-up ────────────────────────────────────── -->
+<section class="section">
+  <h2 class="section-title">Roll-up</h2>
+  <p class="section-sub">Aggregate volume Exa is targeting across the 12 themes. Includes head-term volume + supporting cluster volume.</p>
+  <div class="totals">
+    <div class="card"><div class="lbl">Total themes</div><div class="val">12</div><div class="sub">across all 5 goals</div></div>
+    <div class="card"><div class="lbl">Net-new pages</div><div class="val">11</div><div class="sub">/versus, segment hubs, AI search hub</div></div>
+    <div class="card"><div class="lbl">Existing pages to deepen</div><div class="val">1</div><div class="sub">/exa-api category hub</div></div>
+    <div class="card"><div class="lbl">Total head-term volume</div><div class="val">52,160</div><div class="sub">US monthly searches</div></div>
+    <div class="card"><div class="lbl">Average primary KD</div><div class="val">36</div><div class="sub">on a 0–100 scale</div></div>
+  </div>
+</section>
+
+<!-- THEME SHEET ─────────────────────────────────── -->
+<section class="section">
+  <h2 class="section-title">Keyword Theme Sheet</h2>
+  <p class="section-sub">One theme per target page. Each theme leads with the primary keyword (the head term the page is optimized for) and lists the supporting cluster underneath. Overlap % is the SERP overlap estimate between the supporting keyword and the primary; the campaign keeps supporting terms ≥40% overlap so each page stays semantically tight.</p>
+  <div id="themes"></div>
+</section>
+
+<footer class="foot">
+  Prepared by <span class="logo">daydream</span> · Pulled from Ahrefs Keywords Explorer · US monthly search volume · May 2026
+</footer>
+
+</div>
+
+<script>
+const GOAL_LABELS = {
+  1: "Goal 1 · Product queries",
+  2: "Goal 2 · Competitor comparisons",
+  3: "Goal 3 · Integrations",
+  4: "Goal 4 · Use-case segments",
+  5: "Goal 5 · Knowledge layer",
+};
+
+function kdClass(kd) {
+  if (kd === null || kd === undefined) return "kd-na";
+  if (kd <= 20) return "kd-low";
+  if (kd <= 50) return "kd-mid";
+  return "kd-high";
+}
+
+function kdDisplay(kd) {
+  if (kd === null || kd === undefined) return "—";
+  return kd;
+}
+
+function num(n) {
+  if (n === null || n === undefined) return "—";
+  if (typeof n === "string") return n;
+  return n.toLocaleString();
+}
+
+const THEMES = [
+  // ── THEME 1 ────────────────────────────────────
+  {
+    id: "t1",
+    goal: 1,
+    primary: { kw: "web search api", vol: 350, kd: 69, tp: 300, overlap: 100 },
+    target: "/exa-api",
+    targetStatus: "existing",
+    notes: "Scott's named money keyword. exa.ai/exa-api targets this in the title today but doesn't rank top — Brave, Tavily, SerpAPI, and Reddit own the SERP. The deepening playbook: tighten the primary head-term targeting, add the supporting cluster as on-page subsections (or as FAQs), and direct backlinks to the page. Adds ~2,800 monthly volume to the page once it ranks for the supporting cluster too.",
+    supporting: [
+      { kw: "search api", vol: 1100, kd: 52, overlap: 60 },
+      { kw: "search engine api", vol: 600, kd: 86, overlap: 50 },
+      { kw: "bing web search api", vol: 300, kd: 7, overlap: 50 },
+      { kw: "free web search api", vol: 250, kd: 25, overlap: 50 },
+      { kw: "ai web search api", vol: 60, kd: null, overlap: 70 },
+      { kw: "best web search api", vol: 50, kd: 2, overlap: 70 },
+      { kw: "web search apis", vol: 40, kd: 69, overlap: 80 },
+      { kw: "api for web search", vol: 40, kd: null, overlap: 70 },
+    ],
+  },
+  // ── THEME 2 ────────────────────────────────────
+  {
+    id: "t2",
+    goal: 1,
+    primary: { kw: "ai search engine", vol: 21000, kd: 81, tp: 599000, overlap: 100 },
+    target: "/ai-search-engine",
+    targetStatus: "new",
+    notes: "Scott named this as a target. The head term's KD is 81 and the parent topic is Perplexity — they own the consumer SERP. This is a long-horizon page: structure it for the developer slice of the query (\"ai search engine for developers,\" \"ai search engine api\") so we capture qualified traffic without fighting Perplexity head-on. Authority + on-page work required before this page ranks; honest expectation is 6+ months.",
+    supporting: [
+      { kw: "ai powered search engine", vol: 1900, kd: 80, overlap: 80 },
+      { kw: "ai search engine for developers", vol: 30, kd: null, overlap: 70 },
+      { kw: "llm search engine", vol: 100, kd: 2, overlap: 50 },
+      { kw: "best ai search engine", vol: 1300, kd: 70, overlap: 60 },
+      { kw: "ai search api", vol: 10, kd: 86, overlap: 50 },
+    ],
+  },
+  // ── THEME 3 ────────────────────────────────────
+  {
+    id: "t3",
+    goal: 4,
+    primary: { kw: "search api for coding agents", vol: 10, kd: null, tp: null, overlap: 100 },
+    target: "/solutions/coding-agents",
+    targetStatus: "new",
+    notes: "Coding Agents segment hub (priority ICP #1). Anchor accounts: Cursor, Vercel, Replit. The primary head-term has near-zero volume today because the SERP doesn't yet recognize \"search api for coding agents\" as a category — but Exa has the deepest customer base in this segment. The page exists to (a) be the canonical destination for Cursor / Vercel / Replit customer stories, (b) accumulate long-tail volume from \"code documentation search\" and \"ai code search\" queries, and (c) capture branded search like \"exa cursor\" or \"exa code search.\" Build it once the SERP catches up to the category.",
+    supporting: [
+      { kw: "code documentation search api", vol: 0, kd: null, overlap: 80 },
+      { kw: "ai code search", vol: 20, kd: null, overlap: 70 },
+      { kw: "code search api", vol: 0, kd: null, overlap: 80 },
+      { kw: "search api for ai agents", vol: 10, kd: null, overlap: 60 },
+    ],
+  },
+  // ── THEME 4 ────────────────────────────────────
+  {
+    id: "t4",
+    goal: 4,
+    primary: { kw: "llm search", vol: 300, kd: 18, tp: 200, overlap: 100 },
+    target: "/solutions/ai-agents",
+    targetStatus: "new",
+    notes: "AI Infrastructure & Agents segment hub (priority ICP #2). Anchor accounts: Notion AI, Anthropic, LangChain. Primary head-term has manageable difficulty and lines up with how LLM-app builders search. The supporting cluster captures the surrounding ecosystem (RAG, semantic search, context engineering, information retrieval). Notion AI, Anthropic, and LangChain on the page as anchor logos.",
+    supporting: [
+      { kw: "llm search engine", vol: 100, kd: 2, overlap: 80 },
+      { kw: "llm semantic search", vol: 150, kd: 16, overlap: 60 },
+      { kw: "semantic search llm", vol: 100, kd: 18, overlap: 60 },
+      { kw: "llm information retrieval", vol: 100, kd: 2, overlap: 60 },
+      { kw: "rag api", vol: 150, kd: 9, overlap: 50 },
+      { kw: "search api for llms", vol: 20, kd: null, overlap: 70 },
+      { kw: "web search api for ai agents", vol: 10, kd: null, overlap: 60 },
+      { kw: "mcp compatible search api", vol: 0, kd: null, overlap: 40 },
+    ],
+  },
+  // ── THEME 5 ────────────────────────────────────
+  {
+    id: "t5",
+    goal: 4,
+    primary: { kw: "competitive intelligence tools", vol: 2400, kd: 20, tp: 7400, overlap: 100 },
+    target: "/solutions/gtm-intelligence",
+    targetStatus: "new",
+    notes: "GTM Intelligence segment hub (priority ICP #3). Anchor accounts: HubSpot, Monday.com, Clay. This is the highest-ROI segment hub by volume — total cluster volume ~8,000+ with average KD ~10. Captures buyers evaluating tools for competitive monitoring, sales research, and enrichment. Positions Exa's Websets + entity index against Clay, ZoomInfo, Crayon.",
+    supporting: [
+      { kw: "competitive intelligence software", vol: 2400, kd: 17, overlap: 80 },
+      { kw: "data enrichment tools", vol: 1000, kd: 9, overlap: 50 },
+      { kw: "sales intelligence tools", vol: 1300, kd: 10, overlap: 40 },
+      { kw: "b2b data enrichment", vol: 1000, kd: 4, overlap: 40 },
+      { kw: "data enrichment software", vol: 350, kd: 9, overlap: 50 },
+      { kw: "best competitive intelligence tools", vol: 150, kd: 11, overlap: 70 },
+      { kw: "company enrichment api", vol: 150, kd: 2, overlap: 50 },
+      { kw: "people search api", vol: 150, kd: 6, overlap: 40 },
+    ],
+  },
+  // ── THEME 6 ────────────────────────────────────
+  {
+    id: "t6",
+    goal: 2,
+    primary: { kw: "parallel ai", vol: 1600, kd: 36, tp: 2300, overlap: 100 },
+    target: "/versus/parallel",
+    targetStatus: "new",
+    notes: "Parallel is the closest direct product competitor (per Scott). Lowest authority of the comparison set (DR 72, 1,961 refdomains). Exa should be able to win this comparison page on product depth alone. Theme volume ~1,830.",
+    supporting: [
+      { kw: "parallel web", vol: 150, kd: null, overlap: 60 },
+      { kw: "parallel web systems", vol: 80, kd: null, overlap: 70 },
+      { kw: "parallel api", vol: 80, kd: null, overlap: 60 },
+      { kw: "exa vs parallel", vol: 30, kd: null, overlap: 80 },
+    ],
+  },
+  // ── THEME 7 ────────────────────────────────────
+  {
+    id: "t7",
+    goal: 2,
+    primary: { kw: "tavily", vol: 6800, kd: 13, tp: 2300, overlap: 100 },
+    target: "/versus/tavily",
+    targetStatus: "new",
+    notes: "Tavily was acquired by Nebius. /versus refresh should position the acquisition as a change of priorities (research vs. independent product roadmap). Tavily is currently beating Exa on \"web search api\" rankings today; reclaiming those buyers via this page is high-priority. Theme volume ~7,580.",
+    supporting: [
+      { kw: "tavily pricing", vol: 450, kd: null, overlap: 70 },
+      { kw: "tavily search api", vol: 250, kd: 3, overlap: 70 },
+      { kw: "tavily alternatives", vol: 60, kd: null, overlap: 70 },
+      { kw: "tavily alternative", vol: 20, kd: null, overlap: 70 },
+    ],
+  },
+  // ── THEME 8 ────────────────────────────────────
+  {
+    id: "t8",
+    goal: 2,
+    primary: { kw: "firecrawl", vol: 22000, kd: 39, tp: 25000, overlap: 100 },
+    target: "/versus/firecrawl",
+    targetStatus: "new",
+    notes: "Firecrawl is the largest competitor by brand volume and is currently out-publishing Exa on commercial pages despite a smaller backlink footprint. The /versus page targets buyers researching alternatives. Theme volume ~23,400. KD 39 is hard but achievable for a /versus page since brand SERPs typically favor comparison content.",
+    supporting: [
+      { kw: "firecrawl pricing", vol: 1200, kd: null, overlap: 70 },
+      { kw: "firecrawl alternatives", vol: 200, kd: null, overlap: 70 },
+      { kw: "firecrawl alternative", vol: 50, kd: null, overlap: 70 },
+      { kw: "firecrawl api", vol: 250, kd: null, overlap: 60 },
+    ],
+  },
+  // ── THEME 9 ────────────────────────────────────
+  {
+    id: "t9",
+    goal: 2,
+    primary: { kw: "serpapi", vol: 9700, kd: 18, tp: 19000, overlap: 100 },
+    target: "/versus/serpapi",
+    targetStatus: "new",
+    notes: "SerpAPI is the traffic leader in the peer set (112k/mo) at slightly higher DR (77). The /versus page positions Exa's neural index advantage over keyword-based SERP scraping. Best-serp-api as a supporting term captures \"which one should I use\" intent. Theme volume ~10,400.",
+    supporting: [
+      { kw: "best serp api", vol: 600, kd: 55, overlap: 50 },
+      { kw: "serpapi alternative", vol: 70, kd: 3, overlap: 70 },
+      { kw: "serpapi alternatives", vol: 50, kd: 3, overlap: 70 },
+    ],
+  },
+  // ── THEME 10 ───────────────────────────────────
+  {
+    id: "t10",
+    goal: 2,
+    primary: { kw: "brave search api", vol: 1700, kd: 27, tp: 3100, overlap: 100 },
+    target: "/versus/brave",
+    targetStatus: "new",
+    notes: "Brave is currently outranking Exa on Scott's head term \"web search api\". The /versus page captures the swap intent. Theme volume ~2,950 across the brand + API family. KD on \"brave api\" is 9 — easy supporting win.",
+    supporting: [
+      { kw: "brave api", vol: 1100, kd: 9, overlap: 70 },
+      { kw: "brave search api pricing", vol: 150, kd: null, overlap: 60 },
+      { kw: "brave search", vol: 50000, kd: 33, overlap: 30 },
+    ],
+  },
+  // ── THEME 11 ───────────────────────────────────
+  {
+    id: "t11",
+    goal: 2,
+    primary: { kw: "perplexity api", vol: 4900, kd: 62, tp: 2800, overlap: 100 },
+    target: "/versus/perplexity-api",
+    targetStatus: "new",
+    notes: "Perplexity recently launched an API — direct overlap with Exa's positioning. KD 62 on the brand head term is real, but the supporting cluster (Sonar variants + pricing) is more attainable. Position the comparison around developer-vs-consumer (Perplexity = consumer-first, Exa = developer-first API). Theme volume ~7,500.",
+    supporting: [
+      { kw: "perplexity api pricing", vol: 1400, kd: 40, overlap: 70 },
+      { kw: "perplexity sonar", vol: 800, kd: null, overlap: 50 },
+      { kw: "perplexity sonar api", vol: 400, kd: null, overlap: 60 },
+      { kw: "sonar pro", vol: 150, kd: 5, overlap: 50 },
+    ],
+  },
+  // ── THEME 12 ───────────────────────────────────
+  {
+    id: "t12",
+    goal: 3,
+    primary: { kw: "openai web search", vol: 70, kd: 1, tp: 350, overlap: 100 },
+    target: "/integrations/openai · /integrations/langchain · /integrations/mcp",
+    targetStatus: "existing-deepen",
+    notes: "Goal 3 (integration traffic). Exa has 32 live /integrations pages with near-zero organic traffic — the work is head-term optimization, not page creation. This theme bundles the three highest-value integration head terms because the playbook is identical: tighten the H1 to the head term, add JSON-LD HowTo schema, embed code snippet front-and-center, link from the segment hubs in Themes 3 and 4. Low volume across the board (5–100 each) but very low KD (most under 10) and very high purchase intent — these are devs already integrating.",
+    supporting: [
+      { kw: "openai web search api", vol: 30, kd: null, overlap: 80 },
+      { kw: "langchain web search", vol: 10, kd: 9, overlap: 60 },
+      { kw: "langchain tools", vol: 600, kd: null, overlap: 30 },
+      { kw: "mcp web search", vol: 100, kd: null, overlap: 70 },
+      { kw: "mcp server search", vol: 40, kd: null, overlap: 60 },
+      { kw: "mcp compatible search api", vol: 0, kd: null, overlap: 50 },
+    ],
+  },
+];
+
+function targetCell(theme) {
+  const paths = theme.target.split(" · ").map((p) => `<code>${p}</code>`).join(" · ");
+  if (theme.targetStatus === "new") return `<span class="tbd">TBD · </span>${paths}`;
+  if (theme.targetStatus === "existing-deepen") return `<span style="color:var(--green-d);font-weight:600">Deepen · </span>${paths}`;
+  return `<span style="color:var(--green-d);font-weight:600">Existing · </span>${paths}`;
+}
+
+function renderTheme(theme, idx) {
+  const themeVol = theme.primary.vol + theme.supporting.reduce((s, k) => s + (k.vol || 0), 0);
+  const avgKD = (() => {
+    const all = [theme.primary, ...theme.supporting].map((k) => k.kd).filter((k) => k !== null && k !== undefined);
+    if (!all.length) return null;
+    return Math.round(all.reduce((s, k) => s + k, 0) / all.length);
+  })();
+  const supportingRows = theme.supporting.map((k) => `
+    <tr>
+      <td>${k.kw}</td>
+      <td class="num">${num(k.vol)}</td>
+      <td class="center"><span class="kd-pill ${kdClass(k.kd)}">${kdDisplay(k.kd)}</span></td>
+      <td class="center">${k.overlap}%</td>
+    </tr>
+  `).join("");
+  return `
+    <div class="theme" id="${theme.id}">
+      <div class="theme-head">
+        <span class="theme-num">Theme ${idx + 1}</span>
+        <div class="theme-meta">
+          <div class="theme-primary">${theme.primary.kw}</div>
+          <div class="theme-target">${targetCell(theme)}</div>
+        </div>
+        <span class="goal-badge goal-${theme.goal}">${GOAL_LABELS[theme.goal]}</span>
+      </div>
+      <div class="theme-notes"><b style="color:var(--near-black)">Why it&rsquo;s in scope: </b>${theme.notes}</div>
+      <table class="kw-table">
+        <thead>
+          <tr>
+            <th style="width:auto">Keyword</th>
+            <th class="num" style="width:88px">Volume</th>
+            <th class="center" style="width:80px">KD</th>
+            <th class="center" style="width:80px">Overlap</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="primary">
+            <td><span class="badge-primary">Primary</span>${theme.primary.kw}</td>
+            <td class="num">${num(theme.primary.vol)}</td>
+            <td class="center"><span class="kd-pill ${kdClass(theme.primary.kd)}">${kdDisplay(theme.primary.kd)}</span></td>
+            <td class="center">${theme.primary.overlap}%</td>
+          </tr>
+          ${supportingRows}
+        </tbody>
+      </table>
+      <div class="theme-foot">
+        <div><b>${num(themeVol)}</b> total theme volume</div>
+        <div>Avg KD: <b>${avgKD === null ? "—" : avgKD}</b></div>
+        ${theme.primary.tp ? `<div>Primary TP: <b>${num(theme.primary.tp)}</b></div>` : ""}
+        <div>${theme.supporting.length} supporting keyword${theme.supporting.length === 1 ? "" : "s"}</div>
+      </div>
+    </div>
+  `;
+}
+
+document.getElementById("themes").innerHTML = THEMES.map(renderTheme).join("");
+
+// Click-to-jump from coverage rows
+document.querySelectorAll(".cov-clickable").forEach((row) => {
+  row.addEventListener("click", () => {
+    const id = row.getAttribute("data-jump");
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    el.classList.add("flash");
+    setTimeout(() => el.classList.remove("flash"), 1200);
+  });
+});
+</script>
+</body>
+</html>
