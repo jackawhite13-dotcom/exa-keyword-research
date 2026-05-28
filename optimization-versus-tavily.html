@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Page Optimization · /versus/tavily — Exa × daydream</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --cream:#FFF9F4; --offwhite:#FFFFFB; --near-black:#232323; --gray:#454545; --subtle:#6B655F; --border:#E8E2DC; --soft-border:#F0EBE4; --green:#C3F2D0; --green-d:#14532d; --blue:#D0F2FF; --blue-d:#0c4a6e; --amber:#FFECDB; --amber-d:#d97706; --red:#FFCADF; --red-d:#b91c1c; --purple:#F7E8FD; --purple-d:#7c3aed; --gradient:linear-gradient(90deg,#C3F2D0 0%,#B3EAFF 53%,#FEE3CC 100%); }
+*{box-sizing:border-box}html,body{background:var(--cream)}body{font-family:'Raleway',system-ui,-apple-system,sans-serif;color:var(--near-black);margin:0;padding:0;font-size:13.5px;line-height:1.55}.wrap{max-width:1080px;margin:0 auto;padding:28px 24px 64px}a{color:var(--blue-d);text-decoration:none}a:hover{text-decoration:underline}.breadcrumb{font-size:11px;color:var(--subtle);margin-bottom:14px}.breadcrumb a{color:var(--subtle);font-weight:600}.breadcrumb a:hover{color:var(--near-black)}.header{padding:0 0 18px;border-bottom:1px solid var(--border);margin-bottom:22px}.header::before{content:"";display:block;height:3px;background:var(--gradient);border-radius:2px;margin-bottom:16px;max-width:110px}.eyebrow{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--subtle);margin-bottom:8px}h1{font-size:24px;font-weight:700;margin:0 0 4px;line-height:1.25}.subtitle{font-size:13px;color:var(--gray);max-width:760px}.meta-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:11.5px}.meta-row>div{display:flex;align-items:center;gap:6px}.meta-row b{color:var(--near-black)}.meta-row code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11.5px;padding:2px 6px;background:var(--soft-border);border-radius:3px;color:var(--near-black)}.goal-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:0.3px}.goal-1{background:var(--blue);color:var(--blue-d)}.goal-2{background:var(--amber);color:var(--amber-d)}.goal-3{background:var(--purple);color:var(--purple-d)}.goal-4{background:var(--green);color:var(--green-d)}.card{background:var(--offwhite);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:14px}.card h2{font-size:14px;font-weight:700;margin:0 0 10px;letter-spacing:0.2px}.card h2 .num{display:inline-block;background:var(--gradient);color:var(--near-black);font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:0.5px;vertical-align:middle;margin-right:8px}.card .lead{font-size:12.5px;color:var(--gray);margin:0 0 12px;line-height:1.55}.legend{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 18px}.legend-item{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:20px;font-size:10.5px;font-weight:600;border:1px solid}.legend-item .dot{width:8px;height:8px;border-radius:50%}.legend-keep{background:var(--soft-border);border-color:var(--border);color:var(--gray)}.legend-keep .dot{background:var(--subtle)}.legend-modify{background:var(--amber);border-color:#F8D6B9;color:var(--amber-d)}.legend-modify .dot{background:var(--amber-d)}.legend-new{background:var(--green);border-color:#9AE6B4;color:var(--green-d)}.legend-new .dot{background:var(--green-d)}.legend-schema{background:var(--purple);border-color:#D8B4FE;color:var(--purple-d)}.legend-schema .dot{background:var(--purple-d)}.ba{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}.ba-col{background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:12px 14px}.ba-col .lbl{font-size:9.5px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;color:var(--subtle);margin-bottom:6px}.ba-col.current{border-left:3px solid var(--subtle)}.ba-col.proposed{border-left:3px solid var(--green-d);background:#F4FAEF}.ba-col .val{font-size:12.5px;color:var(--near-black);line-height:1.55}.ba-col .val.mono{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11.5px}.rationale{background:var(--cream);border-left:3px solid var(--blue-d);padding:8px 12px;border-radius:0 8px 8px 0;font-size:12px;color:var(--gray);margin:8px 0 14px;line-height:1.55}.rationale b{color:var(--near-black)}.wire{background:var(--offwhite);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:8px}.wire-head{padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);flex-wrap:wrap}.wire-head .status{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;padding:2px 7px;border-radius:3px}.status-keep{background:var(--soft-border);color:var(--gray)}.status-modify{background:var(--amber);color:var(--amber-d)}.status-new{background:var(--green);color:var(--green-d)}.wire-head .tag{font-size:10px;font-weight:700;color:var(--subtle);padding:1px 5px;background:var(--soft-border);border-radius:3px;font-family:ui-monospace,monospace}.wire-head .title{font-size:13px;font-weight:600;color:var(--near-black);flex:1}.wire-body{padding:12px 14px}.wire-body p{margin:0 0 8px;font-size:12px;color:var(--gray);line-height:1.55}.wire-body p:last-child{margin-bottom:0}.wire-body code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11px;background:var(--soft-border);padding:1px 5px;border-radius:3px;color:var(--near-black)}.wire-body pre{background:#1f2027;color:#E0E0E0;border-radius:6px;padding:12px 14px;font-size:11px;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,monospace;line-height:1.5;margin:8px 0}.wire-body ul{margin:6px 0 8px;padding-left:20px}.wire-body li{font-size:12px;color:var(--gray);margin-bottom:4px;line-height:1.55}.tbl{width:100%;border-collapse:collapse;font-size:12px}.tbl th{background:var(--cream);padding:8px 12px;text-align:left;font-weight:700;color:var(--gray);font-size:9.5px;letter-spacing:0.4px;text-transform:uppercase;border-bottom:1px solid var(--border)}.tbl td{padding:7px 12px;border-bottom:1px solid var(--soft-border);color:var(--near-black)}.tbl tr:last-child td{border-bottom:none}.tbl .num{text-align:right;font-variant-numeric:tabular-nums}.tbl .center{text-align:center}.foot{margin-top:36px;padding-top:16px;border-top:1px solid var(--border);font-size:11px;color:var(--subtle);text-align:center}.foot .logo{color:var(--near-black);font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="breadcrumb"><a href="/">← Exa Keyword Research</a> · Theme 7 · Page optimization</div>
+
+<header class="header">
+  <div class="eyebrow">Page optimization mockup</div>
+  <h1><code style="font-family:ui-monospace,SFMono-Regular,monospace;font-size:21px;background:var(--soft-border);padding:2px 8px;border-radius:5px">/versus/tavily</code></h1>
+  <div class="subtitle" style="margin-top:8px">Theme 7 — refresh of one of the five live /versus pages. The page already has strong benchmark content. The deepening pass adds a post-Nebius-acquisition section, a migration CTA, FAQPage schema, and tightens the head-term in the title and H1.</div>
+  <div class="meta-row">
+    <div><b>Theme:</b> 7 of 12</div>
+    <div><b>Goal:</b> <span class="goal-badge goal-2">Goal 2 · Competitor comparisons</span></div>
+    <div><b>Primary keyword:</b> <code>tavily</code></div>
+    <div><b>Status:</b> <span style="color:var(--green-d);font-weight:700">Existing · deepen</span></div>
+  </div>
+</header>
+
+<div class="card">
+  <h2><span class="num">Summary</span>What we&rsquo;re changing and why</h2>
+  <p class="lead">
+    The page is already accuracy-led with strong benchmark tables (WebWalker 81% vs 71%, MKQA 70% vs 63%) and the right key-differentiator H3s. Three things are missing:
+  </p>
+  <ul style="margin:0 0 4px 16px;padding:0;font-size:12.5px;color:var(--gray);line-height:1.7">
+    <li><b style="color:var(--near-black)">Post-Nebius positioning.</b> Tavily was acquired by Nebius — buyers researching alternatives need to see what that means for their roadmap exposure. A new section above the Feature Comparison addresses it head-on.</li>
+    <li><b style="color:var(--near-black)">Migration path.</b> The page currently ends in a generic &ldquo;Try API for free&rdquo; CTA. A &ldquo;Migrating from Tavily&rdquo; section with a code diff is the single most useful conversion element for the active-evaluation buyer.</li>
+    <li><b style="color:var(--near-black)">FAQPage schema.</b> The page already has a FAQ section but no JSON-LD. Adding schema is a one-edit win that unlocks AI overview citation eligibility.</li>
+  </ul>
+</div>
+
+<div class="legend">
+  <span class="legend-item legend-keep"><span class="dot"></span>Keep</span>
+  <span class="legend-item legend-modify"><span class="dot"></span>Modify</span>
+  <span class="legend-item legend-new"><span class="dot"></span>New</span>
+  <span class="legend-item legend-schema"><span class="dot"></span>Schema</span>
+</div>
+
+<div class="card">
+  <h2><span class="num">01</span>Title tag &amp; meta description</h2>
+  <div class="ba">
+    <div class="ba-col current">
+      <div class="lbl">Current title</div>
+      <div class="val mono">Exa vs Tavily: AI Search API Comparison 2026</div>
+    </div>
+    <div class="ba-col proposed">
+      <div class="lbl">Proposed title</div>
+      <div class="val mono">Exa vs Tavily: Neural Search API Comparison (2026)</div>
+    </div>
+  </div>
+  <div class="rationale">
+    <b>Why:</b> &ldquo;Neural Search API&rdquo; vs &ldquo;AI Search API&rdquo; surfaces Exa&rsquo;s actual technical differentiator and matches the supporting cluster (tavily pricing, tavily search api, tavily alternatives). The year stays.
+  </div>
+  <div class="ba">
+    <div class="ba-col current">
+      <div class="lbl">Current meta description</div>
+      <div class="val">Not explicitly set.</div>
+    </div>
+    <div class="ba-col proposed">
+      <div class="lbl">Proposed meta description</div>
+      <div class="val">Comparing Tavily and Exa for AI agents? Exa scores 10 points higher on WebWalker (81% vs 71%) and returns in 1.4s vs 4.5s. Migration guide and benchmark detail inside.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2><span class="num">02</span>Section-by-section</h2>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-modify">Modify</span><span class="tag">H1</span><span class="title">Hero</span></div>
+    <div class="wire-body">
+      <p><b style="color:var(--near-black)">Current:</b> H1 &ldquo;Exa vs. Tavily&rdquo;</p>
+      <p><b style="color:var(--near-black)">Proposed:</b> H1 &ldquo;Exa vs Tavily — Neural Search API Comparison&rdquo; · Sub &ldquo;Updated for Tavily&rsquo;s 2026 acquisition by Nebius. Benchmarks, feature parity, and a drop-in migration guide for the Tavily SDK.&rdquo;</p>
+      <p>Subhead sets the comparative frame (acquisition + migration) which both signal buyer-stage relevance and capture &ldquo;tavily alternatives&rdquo; intent.</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-new">New</span><span class="tag">H2</span><span class="title">Tavily after the Nebius acquisition — what changed for buyers</span></div>
+    <div class="wire-body">
+      <p>New section right under the hero, before the existing Accuracy section. Three sub-bullets:</p>
+      <ul>
+        <li><b>Roadmap exposure.</b> Tavily&rsquo;s product priorities now route through Nebius&rsquo;s GPU + infrastructure strategy.</li>
+        <li><b>What this means for buyers.</b> Independent feature velocity isn&rsquo;t guaranteed; pricing and SLA terms may shift.</li>
+        <li><b>What Exa is offering instead.</b> An independent product roadmap, transparent flat pricing, and the same SOC 2 Type II posture.</li>
+      </ul>
+      <p>Honest tone — not a hit piece. Buyers are reading this to make a real decision and will spot a hatchet job.</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-keep">Keep</span><span class="tag">H2</span><span class="title">Accuracy · Benchmark Results</span></div>
+    <div class="wire-body">
+      <p>Best content on the page. Three benchmarks (WebWalker, MKQA, FreshQA) all favor Exa. Keep as-is. Optional: add a small &ldquo;Reproduce these benchmarks&rdquo; link to a GitHub gist that gives the page credibility teeth.</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-keep">Keep</span><span class="tag">H2</span><span class="title">Key Differentiators (6 H3s)</span></div>
+    <div class="wire-body">
+      <p>Strong structure. Keep. Add one new H3 below the existing six:</p>
+      <ul>
+        <li><b>New H3:</b> &ldquo;Independent roadmap — Exa is venture-backed and unacquired.&rdquo; Bridges the acquisition framing into a product comparison statement.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-keep">Keep</span><span class="tag">H2</span><span class="title">Feature Comparison</span></div>
+    <div class="wire-body">
+      <p>Strong table. Confirm pricing column reflects current Tavily plans (refresh quarterly).</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-new">New</span><span class="tag">H2</span><span class="title">Migrating from Tavily — drop-in guide</span></div>
+    <div class="wire-body">
+      <p>New section, code-led. Show the Tavily call signature and the Exa call signature side-by-side so a dev can see in 15 seconds that the migration is a one-line change.</p>
+<pre># Tavily
+from tavily import TavilyClient
+client = TavilyClient(api_key="...")
+result = client.search("openai gpt-5 launch date")
+
+# Exa — same shape, neural by default
+from exa_py import Exa
+client = Exa(api_key="...")
+result = client.search("openai gpt-5 launch date")</pre>
+      <p>This is the single most useful section for an active-evaluation buyer. Owns the &ldquo;tavily alternative&rdquo; and &ldquo;migrate from tavily&rdquo; long-tail.</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-modify">Modify</span><span class="tag">H2</span><span class="title">FAQ</span></div>
+    <div class="wire-body">
+      <p>Existing FAQ section. Refresh with the acquisition angle + migration mechanics. Suggested questions (six total):</p>
+      <ul>
+        <li>What changed for Tavily customers after the Nebius acquisition?</li>
+        <li>Is Tavily still independent, and what does that mean for pricing?</li>
+        <li>How does Exa&rsquo;s accuracy compare to Tavily&rsquo;s on real-world queries?</li>
+        <li>Can I migrate from Tavily to Exa in one line of code?</li>
+        <li>How does Exa&rsquo;s pricing compare to Tavily&rsquo;s?</li>
+        <li>Which AI agents and LLM frameworks support both Tavily and Exa?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-keep">Keep</span><span class="tag">H2</span><span class="title">Search built for your AI (closer)</span></div>
+    <div class="wire-body">
+      <p>Standard closing section across all /versus pages. Leave.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2><span class="num">03</span>Keyword instances after the optimization</h2>
+  <table class="tbl">
+    <thead>
+      <tr><th>Keyword</th><th class="center">Volume</th><th class="center">Title</th><th class="center">H1</th><th class="center">H2/H3</th><th class="center">Body</th><th class="center">Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>tavily</b> <span style="color:var(--amber-d);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;margin-left:6px">primary</span></td><td class="num">6,800</td><td class="center">1</td><td class="center">1</td><td class="center">8</td><td class="center">28</td><td class="num"><b>38</b></td></tr>
+      <tr><td>tavily pricing</td><td class="num">450</td><td class="center">—</td><td class="center">—</td><td class="center">1</td><td class="center">5</td><td class="num">6</td></tr>
+      <tr><td>tavily search api</td><td class="num">250</td><td class="center">—</td><td class="center">—</td><td class="center">1</td><td class="center">3</td><td class="num">4</td></tr>
+      <tr><td>tavily alternatives</td><td class="num">60</td><td class="center">—</td><td class="center">—</td><td class="center">1</td><td class="center">2</td><td class="num">3</td></tr>
+      <tr><td>tavily alternative</td><td class="num">20</td><td class="center">—</td><td class="center">—</td><td class="center">—</td><td class="center">2</td><td class="num">2</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h2><span class="num">04</span>Schema markup to add</h2>
+  <p class="lead">Add <span style="color:var(--purple-d);font-weight:700">FAQPage</span> JSON-LD on the existing FAQ. Optional <span style="color:var(--purple-d);font-weight:700">ComparisonShoppingPage</span> for the feature-comparison table.</p>
+  <div class="wire">
+    <div class="wire-head"><span class="status" style="background:var(--purple);color:var(--purple-d)">Schema</span><span class="tag">JSON-LD</span><span class="title">FAQPage</span></div>
+    <div class="wire-body">
+<pre>{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What changed for Tavily customers after the Nebius acquisition?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tavily's product roadmap now routes through Nebius's GPU + infrastructure strategy. Independent feature velocity is no longer guaranteed; pricing and SLA terms may shift to reflect Nebius's enterprise positioning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I migrate from Tavily to Exa in one line of code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Exa's Python SDK exposes the same .search() signature as Tavily's. Swap the import and the API key; existing prompts and parsing code work without changes."
+      }
+    }
+    /* … 4 more questions … */
+  ]
+}</pre>
+    </div>
+  </div>
+</div>
+
+<footer class="foot">
+  Prepared by <span class="logo">daydream</span> · Theme 7 of 12 · <a href="/">Back to Keyword Research</a>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Page Optimization · /exa-api — Exa × daydream</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --cream:#FFF9F4; --offwhite:#FFFFFB; --near-black:#232323; --gray:#454545; --subtle:#6B655F; --border:#E8E2DC; --soft-border:#F0EBE4; --green:#C3F2D0; --green-d:#14532d; --blue:#D0F2FF; --blue-d:#0c4a6e; --amber:#FFECDB; --amber-d:#d97706; --red:#FFCADF; --red-d:#b91c1c; --purple:#F7E8FD; --purple-d:#7c3aed; --gradient:linear-gradient(90deg,#C3F2D0 0%,#B3EAFF 53%,#FEE3CC 100%); }
+*{box-sizing:border-box}
+html,body{background:var(--cream)}
+body{font-family:'Raleway',system-ui,-apple-system,sans-serif;color:var(--near-black);margin:0;padding:0;font-size:13.5px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 24px 64px}
+a{color:var(--blue-d);text-decoration:none}
+a:hover{text-decoration:underline}
+.breadcrumb{font-size:11px;color:var(--subtle);margin-bottom:14px}
+.breadcrumb a{color:var(--subtle);font-weight:600}
+.breadcrumb a:hover{color:var(--near-black)}
+.header{padding:0 0 18px;border-bottom:1px solid var(--border);margin-bottom:22px}
+.header::before{content:"";display:block;height:3px;background:var(--gradient);border-radius:2px;margin-bottom:16px;max-width:110px}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--subtle);margin-bottom:8px}
+h1{font-size:24px;font-weight:700;margin:0 0 4px;line-height:1.25}
+.subtitle{font-size:13px;color:var(--gray);max-width:760px}
+.meta-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:11.5px}
+.meta-row>div{display:flex;align-items:center;gap:6px}
+.meta-row b{color:var(--near-black)}
+.meta-row code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11.5px;padding:2px 6px;background:var(--soft-border);border-radius:3px;color:var(--near-black)}
+.goal-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:0.3px}
+.goal-1{background:var(--blue);color:var(--blue-d)}
+.goal-2{background:var(--amber);color:var(--amber-d)}
+.goal-3{background:var(--purple);color:var(--purple-d)}
+.goal-4{background:var(--green);color:var(--green-d)}
+.card{background:var(--offwhite);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+.card h2{font-size:14px;font-weight:700;margin:0 0 10px;letter-spacing:0.2px}
+.card h2 .num{display:inline-block;background:var(--gradient);color:var(--near-black);font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:0.5px;vertical-align:middle;margin-right:8px}
+.card .lead{font-size:12.5px;color:var(--gray);margin:0 0 12px;line-height:1.55}
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 18px}
+.legend-item{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:20px;font-size:10.5px;font-weight:600;border:1px solid}
+.legend-item .dot{width:8px;height:8px;border-radius:50%}
+.legend-keep{background:var(--soft-border);border-color:var(--border);color:var(--gray)}
+.legend-keep .dot{background:var(--subtle)}
+.legend-modify{background:var(--amber);border-color:#F8D6B9;color:var(--amber-d)}
+.legend-modify .dot{background:var(--amber-d)}
+.legend-new{background:var(--green);border-color:#9AE6B4;color:var(--green-d)}
+.legend-new .dot{background:var(--green-d)}
+.legend-schema{background:var(--purple);border-color:#D8B4FE;color:var(--purple-d)}
+.legend-schema .dot{background:var(--purple-d)}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+.ba-col{background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.ba-col .lbl{font-size:9.5px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;color:var(--subtle);margin-bottom:6px}
+.ba-col.current{border-left:3px solid var(--subtle)}
+.ba-col.proposed{border-left:3px solid var(--green-d);background:#F4FAEF}
+.ba-col .val{font-size:12.5px;color:var(--near-black);line-height:1.55}
+.ba-col .val.mono{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11.5px}
+.rationale{background:var(--cream);border-left:3px solid var(--blue-d);padding:8px 12px;border-radius:0 8px 8px 0;font-size:12px;color:var(--gray);margin:8px 0 14px;line-height:1.55}
+.rationale b{color:var(--near-black)}
+.wire{background:var(--offwhite);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:8px}
+.wire-head{padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.wire-head .status{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;padding:2px 7px;border-radius:3px}
+.status-keep{background:var(--soft-border);color:var(--gray)}
+.status-modify{background:var(--amber);color:var(--amber-d)}
+.status-new{background:var(--green);color:var(--green-d)}
+.wire-head .tag{font-size:10px;font-weight:700;color:var(--subtle);padding:1px 5px;background:var(--soft-border);border-radius:3px;font-family:ui-monospace,monospace}
+.wire-head .title{font-size:13px;font-weight:600;color:var(--near-black);flex:1}
+.wire-body{padding:12px 14px}
+.wire-body p{margin:0 0 8px;font-size:12px;color:var(--gray);line-height:1.55}
+.wire-body p:last-child{margin-bottom:0}
+.wire-body code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11px;background:var(--soft-border);padding:1px 5px;border-radius:3px;color:var(--near-black)}
+.wire-body pre{background:#1f2027;color:#E0E0E0;border-radius:6px;padding:12px 14px;font-size:11px;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,monospace;line-height:1.5;margin:8px 0}
+.wire-body ul{margin:6px 0 8px;padding-left:20px}
+.wire-body li{font-size:12px;color:var(--gray);margin-bottom:4px;line-height:1.55}
+.tbl{width:100%;border-collapse:collapse;font-size:12px}
+.tbl th{background:var(--cream);padding:8px 12px;text-align:left;font-weight:700;color:var(--gray);font-size:9.5px;letter-spacing:0.4px;text-transform:uppercase;border-bottom:1px solid var(--border)}
+.tbl td{padding:7px 12px;border-bottom:1px solid var(--soft-border);color:var(--near-black)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl .num{text-align:right;font-variant-numeric:tabular-nums}
+.tbl .center{text-align:center}
+.foot{margin-top:36px;padding-top:16px;border-top:1px solid var(--border);font-size:11px;color:var(--subtle);text-align:center}
+.foot .logo{color:var(--near-black);font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="breadcrumb"><a href="/">← Exa Keyword Research</a> · Theme 1 · Page optimization</div>
+
+<header class="header">
+  <div class="eyebrow">Page optimization mockup</div>
+  <h1><code style="font-family:ui-monospace,SFMono-Regular,monospace;font-size:21px;background:var(--soft-border);padding:2px 8px;border-radius:5px">/exa-api</code></h1>
+  <div class="subtitle" style="margin-top:8px">Theme 1 — the head-term category hub. Scott named &ldquo;web search api&rdquo; as a money keyword on Call 1. The page targets it in the title today but doesn&rsquo;t rank top. This mockup is the deepening pass to convert that targeting into a top-ranking page.</div>
+  <div class="meta-row">
+    <div><b>Theme:</b> 1 of 12</div>
+    <div><b>Goal:</b> <span class="goal-badge goal-1">Goal 1 · Product queries</span></div>
+    <div><b>Primary keyword:</b> <code>web search api</code></div>
+    <div><b>Status:</b> <span style="color:var(--green-d);font-weight:700">Existing · deepen</span></div>
+  </div>
+</header>
+
+<!-- Executive summary ─────────────────────────── -->
+<div class="card">
+  <h2><span class="num">Summary</span>What we&rsquo;re changing and why</h2>
+  <p class="lead">
+    The page has strong product content (benchmarks, customer logos, security signals) but it&rsquo;s structured around a brand narrative (&ldquo;The web, organized for agents&rdquo;) rather than the head-term query. Three changes do the bulk of the work:
+  </p>
+  <ul style="margin:0 0 4px 16px;padding:0;font-size:12.5px;color:var(--gray);line-height:1.7">
+    <li><b style="color:var(--near-black)">Title + H1 lead with the head term.</b> Today the H1 is &ldquo;The web, organized for agents.&rdquo; The proposed H1 anchors the keyword first and keeps the brand line as a subheading.</li>
+    <li><b style="color:var(--near-black)">Add a definition block right under the hero.</b> &ldquo;What is a web search API?&rdquo; captures the featured snippet for the head term and feeds the AI overview.</li>
+    <li><b style="color:var(--near-black)">Add a FAQ section with FAQPage schema.</b> Six questions covering the head-term meta + competitor comparisons + latency/freshness. This is the single biggest GEO lever.</li>
+  </ul>
+</div>
+
+<div class="legend">
+  <span class="legend-item legend-keep"><span class="dot"></span>Keep</span>
+  <span class="legend-item legend-modify"><span class="dot"></span>Modify</span>
+  <span class="legend-item legend-new"><span class="dot"></span>New</span>
+  <span class="legend-item legend-schema"><span class="dot"></span>Schema</span>
+</div>
+
+<!-- Title / Meta ─────────────────────────────── -->
+<div class="card">
+  <h2><span class="num">01</span>Title tag &amp; meta description</h2>
+  <p class="lead">The title tag is the single biggest on-page ranking signal. Lead with the head term, keep the brand suffix, stay under 60 characters.</p>
+  <div class="ba">
+    <div class="ba-col current">
+      <div class="lbl">Current title</div>
+      <div class="val mono">Exa | Web Search API, AI Search Engine, &amp; Website Crawler</div>
+    </div>
+    <div class="ba-col proposed">
+      <div class="lbl">Proposed title</div>
+      <div class="val mono">Web Search API for AI Agents &amp; LLMs — Exa</div>
+    </div>
+  </div>
+  <div class="rationale">
+    <b>Why:</b> Brand-first titles (&ldquo;Exa | …&rdquo;) compete with Google&rsquo;s rewriter and lose head-term weight. Leading with the keyword + ICP qualifier (&ldquo;for AI Agents &amp; LLMs&rdquo;) keeps the primary first, signals the segment, and trails the brand as the suffix — a common high-ranking pattern in this peer set (SerpAPI, Tavily).
+  </div>
+  <div class="ba">
+    <div class="ba-col current">
+      <div class="lbl">Current meta description</div>
+      <div class="val">Not explicitly set — Google is generating one from page copy.</div>
+    </div>
+    <div class="ba-col proposed">
+      <div class="lbl">Proposed meta description</div>
+      <div class="val">Exa&rsquo;s web search API gives AI agents real-time results from a billion-page neural index. p95 latency 1.7s, 1,200-domain filters, SOC 2 Type II. Try free.</div>
+    </div>
+  </div>
+  <div class="rationale">
+    <b>Why:</b> Sets click-through expectations on three benchmark numbers Exa already publishes. The &ldquo;Try free&rdquo; CTA on the meta lifts CTR in commercial SERPs.
+  </div>
+</div>
+
+<!-- Annotated wireframe ──────────────────────── -->
+<div class="card">
+  <h2><span class="num">02</span>Section-by-section</h2>
+  <p class="lead">Each block shows its proposed status and the on-page change. Section order follows the live page.</p>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-modify">Modify</span><span class="tag">H1</span><span class="title">Hero</span></div>
+    <div class="wire-body">
+      <p><b style="color:var(--near-black)">Current:</b> H1 &ldquo;The web, organized for agents&rdquo; · Sub &ldquo;One API for search, crawling, and research agents&rdquo;</p>
+      <p><b style="color:var(--near-black)">Proposed:</b> H1 &ldquo;Web Search API for AI Agents&rdquo; · Sub &ldquo;The web, organized for agents — one API for search, crawling, and research.&rdquo;</p>
+      <p>Brand line moves to subheading; keyword anchors H1. Try-API-Free CTA stays primary; add a secondary &ldquo;Read the docs&rdquo; link for organic devs landing cold.</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-new">New</span><span class="tag">H2</span><span class="title">What is a web search API? (definition block)</span></div>
+    <div class="wire-body">
+      <p>New section directly under the hero. 60-90 word answer to the head-term&rsquo;s implicit definitional question. Optimized for the featured snippet + AI overview citation.</p>
+      <p><b style="color:var(--near-black)">Draft copy:</b> &ldquo;A web search API is a programmatic interface that returns ranked results from a live index of the public web. Unlike scraping a search engine, a web search API exposes its own retrieval layer — including filters, freshness controls, and structured outputs — so AI agents and applications can pull the data they need without rendering a browser or rotating proxies. Exa&rsquo;s web search API runs on a neural index of over a billion pages, returns p95 in under 1.7 seconds, and supports 1,200-domain filters.&rdquo;</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-modify">Modify</span><span class="tag">H2</span><span class="title">&ldquo;Search built for your AI&rdquo;</span></div>
+    <div class="wire-body">
+      <p>Rename to <b>&ldquo;Web search API built for your AI&rdquo;</b> — adds a keyword variant to a high-on-page H2. Same content underneath.</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-keep">Keep</span><span class="tag">H2</span><span class="title">&ldquo;Imagine a world with perfect search&rdquo;</span></div>
+    <div class="wire-body">
+      <p>Strong brand narrative copy. Leave as-is.</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-modify">Modify</span><span class="tag">H2</span><span class="title">&ldquo;Search API — Designed to make your Agent smarter&rdquo;</span></div>
+    <div class="wire-body">
+      <p>Rename to <b>&ldquo;Web search API designed to make your agent smarter.&rdquo;</b> Drop the em-dash, add the head-term variant.</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-new">New</span><span class="tag">H2</span><span class="title">Use cases (segment hub links)</span></div>
+    <div class="wire-body">
+      <p>New section linking forward to the three segment hubs being built in Themes 3-5. Three cards: <b>Coding agents</b> → <code>/solutions/coding-agents</code> · <b>AI agents &amp; RAG</b> → <code>/solutions/ai-agents</code> · <b>GTM intelligence</b> → <code>/solutions/gtm-intelligence</code>.</p>
+      <p>Each card carries one customer logo (Cursor, Notion AI, HubSpot) for at-a-glance segment validation, and the segment&rsquo;s primary keyword as the card title.</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-keep">Keep</span><span class="tag">H2 ×4</span><span class="title">Benchmarks · Latency · Highlights · Search verticals</span></div>
+    <div class="wire-body">
+      <p>Best content on the page — keep all of it. Add internal-link anchors to /versus/* and /integrations/* where natural (the latency section can link to /versus/tavily where Exa wins decisively on p95).</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-keep">Keep</span><span class="tag">H2</span><span class="title">Trusted by world-class teams · Enterprise-grade security</span></div>
+    <div class="wire-body">
+      <p>Customer logos + SOC 2 / ZDR / SSO — trust signals that matter for the AI overview citation. Leave as-is.</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-new">New</span><span class="tag">H2</span><span class="title">FAQ (with FAQPage schema)</span></div>
+    <div class="wire-body">
+      <p>Six questions chosen to compound across organic + AI surfaces. Each answer is 50-90 words and quotes a benchmark Exa already publishes.</p>
+      <ul>
+        <li>What is a web search API?</li>
+        <li>How does Exa&rsquo;s web search API work?</li>
+        <li>How is Exa different from Tavily, Brave, and SerpAPI? <i>(forward-links the three /versus pages)</i></li>
+        <li>What&rsquo;s the latency for Exa&rsquo;s web search API?</li>
+        <li>Does Exa&rsquo;s web search API return real-time data?</li>
+        <li>Which AI agents and LLM frameworks integrate with Exa?</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Keyword instance summary ──────────────────── -->
+<div class="card">
+  <h2><span class="num">03</span>Keyword instances after the optimization</h2>
+  <p class="lead">Target placements for the primary keyword and its supporting cluster. Count = on-page mentions after the changes ship.</p>
+  <table class="tbl">
+    <thead>
+      <tr><th>Keyword</th><th class="center">Volume</th><th class="center">Title</th><th class="center">H1</th><th class="center">H2/H3</th><th class="center">Body</th><th class="center">Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>web search api</b> <span style="color:var(--amber-d);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;margin-left:6px">primary</span></td><td class="num">350</td><td class="center">1</td><td class="center">1</td><td class="center">3</td><td class="center">11</td><td class="num"><b>16</b></td></tr>
+      <tr><td>search api</td><td class="num">1,100</td><td class="center">—</td><td class="center">—</td><td class="center">2</td><td class="center">8</td><td class="num">10</td></tr>
+      <tr><td>web search apis</td><td class="num">40</td><td class="center">—</td><td class="center">—</td><td class="center">1</td><td class="center">3</td><td class="num">4</td></tr>
+      <tr><td>ai web search api</td><td class="num">60</td><td class="center">—</td><td class="center">—</td><td class="center">1</td><td class="center">2</td><td class="num">3</td></tr>
+      <tr><td>web search api for ai agents</td><td class="num">10</td><td class="center">1</td><td class="center">1</td><td class="center">1</td><td class="center">3</td><td class="num">6</td></tr>
+      <tr><td>best web search api</td><td class="num">50</td><td class="center">—</td><td class="center">—</td><td class="center">—</td><td class="center">2</td><td class="num">2</td></tr>
+      <tr><td>api for web search</td><td class="num">40</td><td class="center">—</td><td class="center">—</td><td class="center">—</td><td class="center">2</td><td class="num">2</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Schema ──────────────────────────────────── -->
+<div class="card">
+  <h2><span class="num">04</span>Schema markup to add</h2>
+  <p class="lead">Three JSON-LD blocks. <span style="color:var(--purple-d);font-weight:700">SoftwareApplication</span> for the product itself, <span style="color:var(--purple-d);font-weight:700">FAQPage</span> for the new FAQ section, and a <span style="color:var(--purple-d);font-weight:700">BreadcrumbList</span> if not present site-wide.</p>
+  <div class="wire">
+    <div class="wire-head"><span class="status" style="background:var(--purple);color:var(--purple-d)">Schema</span><span class="tag">JSON-LD</span><span class="title">FAQPage</span></div>
+    <div class="wire-body">
+<pre>{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a web search API?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A web search API is a programmatic interface that returns ranked results from a live index of the public web. Unlike scraping a search engine, a web search API exposes its own retrieval layer (filters, freshness, structured outputs) so AI agents can pull data without rendering a browser or rotating proxies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Exa different from Tavily, Brave, and SerpAPI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exa runs on a neural index of over a billion pages — results are ranked by meaning, not by keyword overlap with a SERP. p95 latency under 1.7s vs. 3.8s–5.1s for keyword-based competitors on the WebWalker benchmark."
+      }
+    }
+    /* … 4 more questions … */
+  ]
+}</pre>
+    </div>
+  </div>
+  <div class="wire">
+    <div class="wire-head"><span class="status" style="background:var(--purple);color:var(--purple-d)">Schema</span><span class="tag">JSON-LD</span><span class="title">SoftwareApplication</span></div>
+    <div class="wire-body">
+<pre>{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Exa Web Search API",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web, REST, Python, TypeScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free tier with $10 in credits, then pay-as-you-go"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "..."
+  }
+}</pre>
+      <p>The aggregateRating field is optional but worth adding if a real public review source exists (G2, Product Hunt).</p>
+    </div>
+  </div>
+</div>
+
+<footer class="foot">
+  Prepared by <span class="logo">daydream</span> · Theme 1 of 12 · <a href="/">Back to Keyword Research</a>
+</footer>
+
+</div>
+</body>
+</html>

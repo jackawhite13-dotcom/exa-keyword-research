@@ -203,7 +203,7 @@ h1 { font-size: 26px; font-weight: 700; margin: 0 0 6px; }
   <div class="totals">
     <div class="card"><div class="lbl">Total themes</div><div class="val">12</div><div class="sub">across all 5 goals</div></div>
     <div class="card"><div class="lbl">Net-new pages</div><div class="val">8</div><div class="sub">4 /versus, 3 segment hubs, 1 category hub</div></div>
-    <div class="card"><div class="lbl">Existing pages to deepen</div><div class="val">4</div><div class="sub">/exa-api, /versus/tavily, /versus/perplexity, 3 /integrations</div></div>
+    <div class="card"><div class="lbl">Existing pages to deepen</div><div class="val">4</div><div class="sub">page-optimization mockups linked on each theme card below</div></div>
     <div class="card"><div class="lbl">Total head-term volume</div><div class="val">52,160</div><div class="sub">US monthly searches</div></div>
     <div class="card"><div class="lbl">Average primary KD</div><div class="val">36</div><div class="sub">on a 0–100 scale</div></div>
   </div>
@@ -257,6 +257,7 @@ const THEMES = [
     primary: { kw: "web search api", vol: 350, kd: 69, tp: 300, overlap: 100 },
     target: "/exa-api",
     targetStatus: "existing",
+    mockup: "/optimization-exa-api.html",
     notes: "Scott's named money keyword. exa.ai/exa-api targets this in the title today but doesn't rank top — Brave, Tavily, SerpAPI, and Reddit own the SERP. The deepening playbook: tighten the primary head-term targeting, add the supporting cluster as on-page subsections (or as FAQs), and direct backlinks to the page. Adds ~2,800 monthly volume to the page once it ranks for the supporting cluster too.",
     supporting: [
       { kw: "search api", vol: 1100, kd: 52, overlap: 60 },
@@ -360,6 +361,7 @@ const THEMES = [
     primary: { kw: "tavily", vol: 6800, kd: 13, tp: 2300, overlap: 100 },
     target: "/versus/tavily",
     targetStatus: "existing-deepen",
+    mockup: "/optimization-versus-tavily.html",
     notes: "Existing page — one of the 5 /versus pages already live (perplexity, serp, serper, tavily, you). Refresh it: Tavily was acquired by Nebius, so the page should position the acquisition as a change of priorities (research vs. independent product roadmap). Tavily is currently beating Exa on \"web search api\" rankings today; reclaiming those buyers via this page is high-priority. Theme volume ~7,580.",
     supporting: [
       { kw: "tavily pricing", vol: 450, kd: null, overlap: 70 },
@@ -418,6 +420,7 @@ const THEMES = [
     primary: { kw: "perplexity api", vol: 4900, kd: 62, tp: 2800, overlap: 100 },
     target: "/versus/perplexity",
     targetStatus: "existing-deepen",
+    mockup: "/optimization-versus-perplexity.html",
     notes: "Existing page — /versus/perplexity is one of the 5 /versus pages already live, but it was built when Perplexity was consumer-only. Now that Perplexity has launched an API, the page needs an API-positioning section (developer-first Exa vs. consumer-first Perplexity, Sonar Pro pricing comparison, API-level feature parity). The supporting cluster (Sonar variants + pricing) is more attainable than the brand head term at KD 62. Theme volume ~7,500.",
     supporting: [
       { kw: "perplexity api pricing", vol: 1400, kd: 40, overlap: 70 },
@@ -433,6 +436,10 @@ const THEMES = [
     primary: { kw: "openai web search", vol: 70, kd: 1, tp: 350, overlap: 100 },
     target: "/integrations/openai · /integrations/langchain · /integrations/mcp",
     targetStatus: "existing-deepen",
+    mockup: "/optimization-integrations-openai.html",
+    mockupExtra: [
+      { label: "LangChain mockup", url: "/optimization-integrations-langchain.html" },
+    ],
     notes: "Goal 3 (integration traffic). Exa has 32 live /integrations pages with near-zero organic traffic — the work is head-term optimization, not page creation. This theme bundles the three highest-value integration head terms because the playbook is identical: tighten the H1 to the head term, add JSON-LD HowTo schema, embed code snippet front-and-center, link from the segment hubs in Themes 3 and 4. Low volume across the board (5–100 each) but very low KD (most under 10) and very high purchase intent — these are devs already integrating.",
     supporting: [
       { kw: "openai web search api", vol: 30, kd: null, overlap: 80 },
@@ -478,6 +485,19 @@ function renderTheme(theme, idx) {
         <span class="goal-badge goal-${theme.goal}">${GOAL_LABELS[theme.goal]}</span>
       </div>
       <div class="theme-notes"><b style="color:var(--near-black)">Why it&rsquo;s in scope: </b>${theme.notes}</div>
+      ${theme.mockup ? `
+        <div style="padding: 0 18px 14px; display: flex; flex-wrap: wrap; gap: 8px;">
+          <a href="${theme.mockup}" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--green); color: var(--green-d); border: 1px solid #9AE6B4; border-radius: 6px; font-size: 11.5px; font-weight: 600; text-decoration: none;">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+            Page optimization mockup →
+          </a>
+          ${(theme.mockupExtra || []).map((m) => `
+            <a href="${m.url}" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--soft-border); color: var(--gray); border: 1px solid var(--border); border-radius: 6px; font-size: 11.5px; font-weight: 600; text-decoration: none;">
+              ${m.label} →
+            </a>
+          `).join("")}
+        </div>
+      ` : ""}
       <table class="kw-table">
         <thead>
           <tr>

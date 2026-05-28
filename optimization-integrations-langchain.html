@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Page Optimization · /integrations/langchain — Exa × daydream</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --cream:#FFF9F4; --offwhite:#FFFFFB; --near-black:#232323; --gray:#454545; --subtle:#6B655F; --border:#E8E2DC; --soft-border:#F0EBE4; --green:#C3F2D0; --green-d:#14532d; --blue:#D0F2FF; --blue-d:#0c4a6e; --amber:#FFECDB; --amber-d:#d97706; --red:#FFCADF; --red-d:#b91c1c; --purple:#F7E8FD; --purple-d:#7c3aed; --gradient:linear-gradient(90deg,#C3F2D0 0%,#B3EAFF 53%,#FEE3CC 100%); }
+*{box-sizing:border-box}html,body{background:var(--cream)}body{font-family:'Raleway',system-ui,-apple-system,sans-serif;color:var(--near-black);margin:0;padding:0;font-size:13.5px;line-height:1.55}.wrap{max-width:1080px;margin:0 auto;padding:28px 24px 64px}a{color:var(--blue-d);text-decoration:none}a:hover{text-decoration:underline}.breadcrumb{font-size:11px;color:var(--subtle);margin-bottom:14px}.breadcrumb a{color:var(--subtle);font-weight:600}.breadcrumb a:hover{color:var(--near-black)}.header{padding:0 0 18px;border-bottom:1px solid var(--border);margin-bottom:22px}.header::before{content:"";display:block;height:3px;background:var(--gradient);border-radius:2px;margin-bottom:16px;max-width:110px}.eyebrow{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--subtle);margin-bottom:8px}h1{font-size:24px;font-weight:700;margin:0 0 4px;line-height:1.25}.subtitle{font-size:13px;color:var(--gray);max-width:760px}.meta-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:11.5px}.meta-row>div{display:flex;align-items:center;gap:6px}.meta-row b{color:var(--near-black)}.meta-row code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11.5px;padding:2px 6px;background:var(--soft-border);border-radius:3px;color:var(--near-black)}.goal-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:0.3px}.goal-1{background:var(--blue);color:var(--blue-d)}.goal-2{background:var(--amber);color:var(--amber-d)}.goal-3{background:var(--purple);color:var(--purple-d)}.goal-4{background:var(--green);color:var(--green-d)}.card{background:var(--offwhite);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:14px}.card h2{font-size:14px;font-weight:700;margin:0 0 10px;letter-spacing:0.2px}.card h2 .num{display:inline-block;background:var(--gradient);color:var(--near-black);font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:0.5px;vertical-align:middle;margin-right:8px}.card .lead{font-size:12.5px;color:var(--gray);margin:0 0 12px;line-height:1.55}.legend{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 18px}.legend-item{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:20px;font-size:10.5px;font-weight:600;border:1px solid}.legend-item .dot{width:8px;height:8px;border-radius:50%}.legend-keep{background:var(--soft-border);border-color:var(--border);color:var(--gray)}.legend-keep .dot{background:var(--subtle)}.legend-modify{background:var(--amber);border-color:#F8D6B9;color:var(--amber-d)}.legend-modify .dot{background:var(--amber-d)}.legend-new{background:var(--green);border-color:#9AE6B4;color:var(--green-d)}.legend-new .dot{background:var(--green-d)}.legend-schema{background:var(--purple);border-color:#D8B4FE;color:var(--purple-d)}.legend-schema .dot{background:var(--purple-d)}.ba{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}.ba-col{background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:12px 14px}.ba-col .lbl{font-size:9.5px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;color:var(--subtle);margin-bottom:6px}.ba-col.current{border-left:3px solid var(--subtle)}.ba-col.proposed{border-left:3px solid var(--green-d);background:#F4FAEF}.ba-col .val{font-size:12.5px;color:var(--near-black);line-height:1.55}.ba-col .val.mono{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11.5px}.rationale{background:var(--cream);border-left:3px solid var(--blue-d);padding:8px 12px;border-radius:0 8px 8px 0;font-size:12px;color:var(--gray);margin:8px 0 14px;line-height:1.55}.rationale b{color:var(--near-black)}.wire{background:var(--offwhite);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:8px}.wire-head{padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);flex-wrap:wrap}.wire-head .status{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;padding:2px 7px;border-radius:3px}.status-keep{background:var(--soft-border);color:var(--gray)}.status-modify{background:var(--amber);color:var(--amber-d)}.status-new{background:var(--green);color:var(--green-d)}.wire-head .tag{font-size:10px;font-weight:700;color:var(--subtle);padding:1px 5px;background:var(--soft-border);border-radius:3px;font-family:ui-monospace,monospace}.wire-head .title{font-size:13px;font-weight:600;color:var(--near-black);flex:1}.wire-body{padding:12px 14px}.wire-body p{margin:0 0 8px;font-size:12px;color:var(--gray);line-height:1.55}.wire-body p:last-child{margin-bottom:0}.wire-body code{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11px;background:var(--soft-border);padding:1px 5px;border-radius:3px;color:var(--near-black)}.wire-body pre{background:#1f2027;color:#E0E0E0;border-radius:6px;padding:12px 14px;font-size:11px;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,monospace;line-height:1.5;margin:8px 0}.wire-body ul{margin:6px 0 8px;padding-left:20px}.wire-body li{font-size:12px;color:var(--gray);margin-bottom:4px;line-height:1.55}.tbl{width:100%;border-collapse:collapse;font-size:12px}.tbl th{background:var(--cream);padding:8px 12px;text-align:left;font-weight:700;color:var(--gray);font-size:9.5px;letter-spacing:0.4px;text-transform:uppercase;border-bottom:1px solid var(--border)}.tbl td{padding:7px 12px;border-bottom:1px solid var(--soft-border);color:var(--near-black)}.tbl tr:last-child td{border-bottom:none}.tbl .num{text-align:right;font-variant-numeric:tabular-nums}.tbl .center{text-align:center}.foot{margin-top:36px;padding-top:16px;border-top:1px solid var(--border);font-size:11px;color:var(--subtle);text-align:center}.foot .logo{color:var(--near-black);font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="breadcrumb"><a href="/">← Exa Keyword Research</a> · Theme 12 · Page optimization</div>
+
+<header class="header">
+  <div class="eyebrow">Page optimization mockup</div>
+  <h1><code style="font-family:ui-monospace,SFMono-Regular,monospace;font-size:21px;background:var(--soft-border);padding:2px 8px;border-radius:5px">/integrations/langchain</code></h1>
+  <div class="subtitle" style="margin-top:8px">Theme 12 — same playbook as <a href="/optimization-integrations-openai.html">/integrations/openai</a>: lead with the head term, code snippet front-and-center, HowTo + FAQPage schema. LangChain has the strongest existing technical surface (ExaSearchRetriever + ExaSearchResults are already named in the live page).</div>
+  <div class="meta-row">
+    <div><b>Theme:</b> 12 of 12</div>
+    <div><b>Goal:</b> <span class="goal-badge goal-3">Goal 3 · Integrations</span></div>
+    <div><b>Primary keyword:</b> <code>langchain web search</code></div>
+    <div><b>Status:</b> <span style="color:var(--green-d);font-weight:700">Existing · deepen</span></div>
+  </div>
+</header>
+
+<div class="card">
+  <h2><span class="num">Summary</span>What we&rsquo;re changing and why</h2>
+  <p class="lead">
+    The live page already names the right primitives (ExaSearchRetriever for RAG pipelines, ExaSearchResults tool for agents, LangGraph compatibility). What it doesn&rsquo;t do is rank — the page is a partner-listing template with no code on-page and no schema. Same three-move deepening as /integrations/openai:
+  </p>
+  <ul style="margin:0 0 4px 16px;padding:0;font-size:12.5px;color:var(--gray);line-height:1.7">
+    <li><b style="color:var(--near-black)">Title and H1 lead with the head term.</b> &ldquo;LangChain Web Search Tool with Exa&rdquo; vs &ldquo;Exa + LangChain.&rdquo;</li>
+    <li><b style="color:var(--near-black)">Code snippet front-and-center.</b> ExaSearchRetriever in 4 lines.</li>
+    <li><b style="color:var(--near-black)">HowTo + FAQPage schema on the new walkthrough and FAQ.</b></li>
+  </ul>
+</div>
+
+<div class="legend">
+  <span class="legend-item legend-keep"><span class="dot"></span>Keep</span>
+  <span class="legend-item legend-modify"><span class="dot"></span>Modify</span>
+  <span class="legend-item legend-new"><span class="dot"></span>New</span>
+  <span class="legend-item legend-schema"><span class="dot"></span>Schema</span>
+</div>
+
+<div class="card">
+  <h2><span class="num">01</span>Title tag &amp; meta description</h2>
+  <div class="ba">
+    <div class="ba-col current">
+      <div class="lbl">Current title</div>
+      <div class="val mono">Exa + LangChain — Partner Integration</div>
+    </div>
+    <div class="ba-col proposed">
+      <div class="lbl">Proposed title</div>
+      <div class="val mono">LangChain Web Search Tool with Exa — Integration Guide</div>
+    </div>
+  </div>
+  <div class="rationale">
+    <b>Why:</b> Identical pattern to /integrations/openai. &ldquo;LangChain Web Search&rdquo; matches LangChain&rsquo;s own tool taxonomy. &ldquo;Partner Integration&rdquo; gets dropped — it&rsquo;s a marketing term, not a search term.
+  </div>
+  <div class="ba">
+    <div class="ba-col current">
+      <div class="lbl">Current meta description</div>
+      <div class="val">Not explicitly set.</div>
+    </div>
+    <div class="ba-col proposed">
+      <div class="lbl">Proposed meta description</div>
+      <div class="val">Add real-time web search to LangChain agents and RAG pipelines with Exa. ExaSearchRetriever, ExaSearchResults tool, and full LangGraph + streaming support. 4-line setup.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2><span class="num">02</span>Section-by-section</h2>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-modify">Modify</span><span class="tag">H1</span><span class="title">Hero</span></div>
+    <div class="wire-body">
+      <p><b style="color:var(--near-black)">Current:</b> H1 &ldquo;Exa + LangChain&rdquo; · Sub &ldquo;Build agents on LangChain with direct access to the web.&rdquo;</p>
+      <p><b style="color:var(--near-black)">Proposed:</b> H1 &ldquo;LangChain Web Search Tool with Exa&rdquo; · Sub &ldquo;ExaSearchRetriever for RAG, ExaSearchResults tool for agents, full LangGraph and streaming support.&rdquo;</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-new">New</span><span class="tag">Code</span><span class="title">Above-the-fold setup snippet</span></div>
+    <div class="wire-body">
+<pre>from langchain_exa import ExaSearchRetriever
+from langchain_openai import ChatOpenAI
+
+retriever = ExaSearchRetriever(exa_api_key="...", k=5)
+llm = ChatOpenAI(model="gpt-4o")
+
+docs = retriever.invoke("What launched today in AI?")
+answer = llm.invoke(
+    f"Using these sources, answer the question:\n{docs}"
+)</pre>
+      <p>Four lines of setup, real call. Optional second snippet for the LangGraph tool wiring (ExaSearchResults).</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-new">New</span><span class="tag">H2</span><span class="title">How to add LangChain web search with Exa (step-by-step)</span></div>
+    <div class="wire-body">
+      <p>HowTo walkthrough. Three steps; mirrors the OpenAI page&rsquo;s structure.</p>
+      <ul>
+        <li><b>Step 1:</b> Install (<code>pip install langchain-exa langchain-openai</code>)</li>
+        <li><b>Step 2:</b> Initialize ExaSearchRetriever (RAG) or ExaSearchResults (agent tool)</li>
+        <li><b>Step 3:</b> Wire into your chain or LangGraph node</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-modify">Modify</span><span class="tag">H2</span><span class="title">Overview</span></div>
+    <div class="wire-body">
+      <p>Trim to one paragraph naming the actual primitives: ExaSearchRetriever for RAG, ExaSearchResults tool for agents, async + streaming support, LangGraph compatibility.</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-modify">Modify</span><span class="tag">H2</span><span class="title">Quick links &amp; Related partners</span></div>
+    <div class="wire-body">
+      <p>Rename to <b>&ldquo;Docs, SDK, and examples&rdquo;</b> and <b>&ldquo;Other LLM integrations&rdquo;</b>. Cross-link to /integrations/openai, /integrations/anthropic, /integrations/mcp.</p>
+    </div>
+  </div>
+
+  <div class="wire">
+    <div class="wire-head"><span class="status status-new">New</span><span class="tag">H2</span><span class="title">FAQ (with FAQPage schema)</span></div>
+    <div class="wire-body">
+      <p>Six questions:</p>
+      <ul>
+        <li>How do I add web search to a LangChain agent?</li>
+        <li>What&rsquo;s the difference between ExaSearchRetriever and ExaSearchResults?</li>
+        <li>Does Exa work with LangGraph?</li>
+        <li>How does Exa compare to LangChain&rsquo;s built-in search tools?</li>
+        <li>Can I use Exa with streaming and async LangChain chains?</li>
+        <li>What does the LangChain + Exa integration cost?</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2><span class="num">03</span>Keyword instances after the optimization</h2>
+  <table class="tbl">
+    <thead>
+      <tr><th>Keyword</th><th class="center">Volume</th><th class="center">Title</th><th class="center">H1</th><th class="center">H2/H3</th><th class="center">Body</th><th class="center">Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>langchain web search</b> <span style="color:var(--amber-d);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;margin-left:6px">primary</span></td><td class="num">10</td><td class="center">1</td><td class="center">1</td><td class="center">3</td><td class="center">9</td><td class="num"><b>14</b></td></tr>
+      <tr><td>langchain tools</td><td class="num">600</td><td class="center">—</td><td class="center">—</td><td class="center">2</td><td class="center">5</td><td class="num">7</td></tr>
+      <tr><td>langchain search</td><td class="num">~</td><td class="center">1</td><td class="center">—</td><td class="center">2</td><td class="center">5</td><td class="num">8</td></tr>
+      <tr><td>langchain rag</td><td class="num">~</td><td class="center">—</td><td class="center">—</td><td class="center">1</td><td class="center">4</td><td class="num">5</td></tr>
+      <tr><td>langgraph search</td><td class="num">~</td><td class="center">—</td><td class="center">—</td><td class="center">1</td><td class="center">3</td><td class="num">4</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h2><span class="num">04</span>Schema markup to add</h2>
+  <p class="lead">Same three blocks as <a href="/optimization-integrations-openai.html">/integrations/openai</a>: <span style="color:var(--purple-d);font-weight:700">HowTo</span>, <span style="color:var(--purple-d);font-weight:700">FAQPage</span>, <span style="color:var(--purple-d);font-weight:700">SoftwareSourceCode</span>. The HowTo step names change but the schema structure is identical — implement once as a template, instantiate per integration page.</p>
+</div>
+
+<footer class="foot">
+  Prepared by <span class="logo">daydream</span> · Theme 12 of 12 · <a href="/">Back to Keyword Research</a>
+</footer>
+
+</div>
+</body>
+</html>
