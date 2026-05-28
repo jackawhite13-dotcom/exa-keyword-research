@@ -18,88 +18,31 @@
     <span>May 2026 · Keyword Research v1</span>
   </div>
 
-  <header class="hero">
+  <header class="hero compact">
     <div class="gradient-rule"></div>
     <div class="eyebrow">Exa × daydream</div>
     <h1>Keyword Research</h1>
     <p class="lede">
-      Twelve themes, built from the keywords Exa named on the strategy calls and the three priority ICP segments in the audit. Each theme maps to one target page and one of the five goals.
+      The campaign is built around five goals. Tap any goal to see where it came from and how we are targeting it.
     </p>
     <div class="meta">
+      <div><span class="lbl">Goals</span><span class="val">5</span></div>
       <div><span class="lbl">Themes</span><span class="val">12</span></div>
       <div><span class="lbl">New pages</span><span class="val">8</span></div>
       <div><span class="lbl">Pages to deepen</span><span class="val">4</span></div>
-      <div><span class="lbl">Source</span><span class="val">Ahrefs, US, May 2026</span></div>
+      <div><span class="lbl">Source</span><span class="val">Ahrefs · US · May 2026</span></div>
     </div>
   </header>
 
-  <!-- Goals key ─────────────────────────────────────── -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-eyebrow">Map</div>
-      <h2>Five goals every theme connects to</h2>
-      <p class="section-sub">From the strategy audit. Each theme card below carries the badge of the goal it serves.</p>
-    </div>
-    <div class="goals-key">
-      <div class="goal-row"><div class="num">Goal 1</div><div class="label">Be the first answer for product queries</div><div class="description">web search api, ai search engine, search api</div></div>
-      <div class="goal-row"><div class="num">Goal 2</div><div class="label">Capture competitor comparison traffic</div><div class="description">/versus pages for Tavily, Firecrawl, SerpAPI, Brave, Parallel, Perplexity API</div></div>
-      <div class="goal-row"><div class="num">Goal 3</div><div class="label">Capture integration traffic</div><div class="description">/integrations head term optimization for OpenAI, LangChain, MCP</div></div>
-      <div class="goal-row"><div class="num">Goal 4</div><div class="label">Own three use case segments</div><div class="description">Coding agents, AI infrastructure and agents, GTM intelligence</div></div>
-      <div class="goal-row"><div class="num">Goal 5</div><div class="label">Be the knowledge layer of the internet</div><div class="description">/websets/directory, already strong, not the focus this pass</div></div>
-    </div>
-  </section>
-
-  <!-- Coverage check (accordion) ───────────────────── -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-eyebrow">Coverage</div>
-      <h2>Everything Exa shared, mapped to a theme</h2>
-      <p class="section-sub">Tap a source to expand. Click any row to jump to its theme.</p>
-    </div>
-    <div class="coverage" id="coverage"></div>
-  </section>
-
-  <!-- Roll-up ─────────────────────────────────────── -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-eyebrow">Aggregate</div>
-      <h2>What we are building, by the numbers</h2>
-      <p class="section-sub">Across the twelve themes.</p>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="stat-lbl">Total themes</div><div class="stat-val">12</div><div class="stat-sub">across all 5 goals</div></div>
-      <div class="stat"><div class="stat-lbl">Net new pages</div><div class="stat-val">8</div><div class="stat-sub">4 versus, 3 segment hubs, 1 category hub</div></div>
-      <div class="stat"><div class="stat-lbl">Pages to deepen</div><div class="stat-val">4</div><div class="stat-sub">mockups linked on each theme</div></div>
-      <div class="stat"><div class="stat-lbl">Head term volume</div><div class="stat-val">52K</div><div class="stat-sub">US monthly searches</div></div>
-      <div class="stat"><div class="stat-lbl">Average primary KD</div><div class="stat-val">36</div><div class="stat-sub">on a 0 to 100 scale</div></div>
-    </div>
-  </section>
-
-  <!-- Themes (collapsed by default) ─────────────────── -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-eyebrow">Themes</div>
-      <h2>Keyword Theme Sheet</h2>
-      <p class="section-sub">Tap any theme to expand the keyword cluster and rationale. Theme volume bar shows relative scale.</p>
-    </div>
-    <div class="themes" id="themes"></div>
-  </section>
+  <div class="goals-stack" id="goals-stack"></div>
 
   <footer class="foot">
-    Prepared by <span class="wordmark">daydream</span>. Volumes from Ahrefs Keywords Explorer, US, May 2026.
+    Prepared by <span class="wordmark">daydream</span>. Volumes from Ahrefs Keywords Explorer, US, May 2026. Other inputs reviewed: Exa SEO/GEO Notion doc (February 2026), reciprocity angle for the relationship, not a target page.
   </footer>
 
 </div>
 
 <script>
-const GOAL_LABELS = {
-  1: "Goal 1 · Product queries",
-  2: "Goal 2 · Comparisons",
-  3: "Goal 3 · Integrations",
-  4: "Goal 4 · Segments",
-  5: "Goal 5 · Knowledge layer",
-};
-
 function kdClass(kd) {
   if (kd === null || kd === undefined) return "kd-na";
   if (kd <= 20) return "kd-low";
@@ -109,85 +52,9 @@ function kdClass(kd) {
 function kdText(kd) { return (kd === null || kd === undefined) ? "·" : kd; }
 function num(n) { if (n === null || n === undefined) return "·"; if (typeof n === "string") return n; return n.toLocaleString(); }
 
-const COVERAGE = [
-  { source: "Call 1", date: "January 2026", tag: "Call", rows: [
-    { kind: "ask", input: "Rank for &ldquo;web search api&rdquo;, the money keyword Scott named", theme: "<b>web search api</b> · <code>/exa-api</code>", jump: "t1" },
-    { kind: "ask", input: "Rank for &ldquo;ai search engine&rdquo;", theme: "<b>ai search engine</b> · <code>/ai-search-engine</code>", jump: "t2" },
-  ]},
-  { source: "Call 2", date: "April 2026", tag: "Call", rows: [
-    { kind: "priority", input: "Priority segment, AI coding agents, Cursor and Vercel", theme: "<b>search api for coding agents</b> · <code>/solutions/coding-agents</code>", jump: "t3" },
-    { kind: "priority", input: "Priority segment, AI infrastructure and agents, Notion AI, Anthropic, LangChain", theme: "<b>llm search</b> · <code>/solutions/ai-agents</code>", jump: "t4" },
-    { kind: "priority", input: "Priority segment, GTM intelligence, HubSpot, Monday.com, Clay", theme: "<b>competitive intelligence tools</b> · <code>/solutions/gtm-intelligence</code>", jump: "t5" },
-    { kind: "competitor", input: "Parallel, closest direct product competitor", theme: "<b>parallel ai</b> · <code>/versus/parallel</code>", jump: "t6" },
-    { kind: "competitor", input: "Tavily, declining threat post Nebius", theme: "<b>tavily</b> · <code>/versus/tavily</code>", jump: "t7" },
-    { kind: "competitor", input: "Firecrawl, beating Exa on commercial pages", theme: "<b>firecrawl</b> · <code>/versus/firecrawl</code>", jump: "t8" },
-    { kind: "competitor", input: "SerpAPI, traffic leader in the peer set", theme: "<b>serpapi</b> · <code>/versus/serpapi</code>", jump: "t9" },
-    { kind: "competitor", input: "Brave Search API, currently outranking Exa on the head term", theme: "<b>brave search api</b> · <code>/versus/brave</code>", jump: "t10" },
-    { kind: "competitor", input: "Perplexity API, overlap with new API offering", theme: "<b>perplexity api</b> · <code>/versus/perplexity</code>", jump: "t11" },
-  ]},
-  { source: "Strategy audit", date: "April 2026", tag: "Audit", rows: [
-    { kind: "goal", input: "Goal 1, be the first answer for product queries", theme: "<b>web search api</b> · <code>/exa-api</code>", jump: "t1" },
-    { kind: "goal", input: "Goal 3, capture integration traffic, 32 live pages with near zero organic", theme: "<b>openai, langchain, mcp web search</b>", jump: "t12" },
-  ]},
-  { source: "Exa SEO/GEO Notion doc", date: "February 2026", tag: "Notion", rows: [
-    { kind: "reciprocity", input: "Exa positions its API for SEO/GEO companies, six use cases", theme: "Not a target page", noJump: true, status: "Relationship" },
-  ]},
-];
-
-function renderCoverage() {
-  const el = document.getElementById("coverage");
-  const chevron = '<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
-  let html = "";
-  COVERAGE.forEach((grp, gi) => {
-    const open = gi === 1 ? "open" : "";
-    html += `<div class="cov-group">
-      <div class="cov-group-header ${open}" data-group="${gi}">
-        <div>
-          <div class="source">${grp.source}</div>
-          <div class="source-meta">${grp.date}</div>
-        </div>
-        <span class="tag">${grp.tag}</span>
-        <span class="count">${grp.rows.length} ${grp.rows.length === 1 ? "input" : "inputs"}</span>
-        ${chevron}
-      </div>
-      <div class="cov-group-body ${open}" data-body="${gi}">
-        ${grp.rows.map((r) => {
-          const jumpAttr = r.noJump ? "" : `data-jump="${r.jump}"`;
-          const status = r.status || "Covered";
-          return `<div class="cov-row" ${jumpAttr}>
-            <div class="input"><span class="kind">${r.kind}</span>${r.input}</div>
-            <div class="theme">${r.theme}</div>
-            <div><span class="status">${status}</span></div>
-          </div>`;
-        }).join("")}
-      </div>
-    </div>`;
-  });
-  el.innerHTML = html;
-  el.querySelectorAll(".cov-group-header").forEach((h) => {
-    h.addEventListener("click", () => {
-      const gi = h.getAttribute("data-group");
-      const body = el.querySelector(`.cov-group-body[data-body="${gi}"]`);
-      h.classList.toggle("open");
-      body.classList.toggle("open");
-    });
-  });
-  el.querySelectorAll(".cov-row[data-jump]").forEach((row) => {
-    row.addEventListener("click", () => {
-      const id = row.getAttribute("data-jump");
-      const target = document.getElementById(id);
-      if (!target) return;
-      // Open the theme before scrolling
-      target.classList.add("open");
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      target.classList.add("flash");
-      setTimeout(() => target.classList.remove("flash"), 1200);
-    });
-  });
-}
-
-const THEMES = [
-  { id: "t1", goal: 1, primary: { kw: "web search api", vol: 350, kd: 69, tp: 300, overlap: 100 },
+// ── Themes (data) ────────────────────────────────────────
+const THEMES_BY_ID = {
+  t1: { id: "t1", goal: 1, primary: { kw: "web search api", vol: 350, kd: 69, tp: 300, overlap: 100 },
     target: "/exa-api", targetStatus: "existing", mockup: "/optimization-exa-api.html",
     notes: "Scott named this as the money keyword on Call 1. The page exa.ai/exa-api targets it in the title today but does not rank top. Brave, Tavily, SerpAPI, and Reddit own the SERP. The deepening playbook tightens the head term targeting, adds the supporting cluster as on page subsections, and routes backlinks to the page.",
     supporting: [
@@ -200,7 +67,7 @@ const THEMES = [
       { kw: "web search apis", vol: 40, kd: 69, overlap: 80 },
       { kw: "api for web search", vol: 40, kd: null, overlap: 70 },
     ] },
-  { id: "t2", goal: 1, primary: { kw: "ai search engine", vol: 21000, kd: 81, tp: 599000, overlap: 100 },
+  t2: { id: "t2", goal: 1, primary: { kw: "ai search engine", vol: 21000, kd: 81, tp: 599000, overlap: 100 },
     target: "/ai-search-engine", targetStatus: "new",
     notes: "Scott named this as a target. KD is 81 and the parent topic is Perplexity, who owns the consumer SERP. Long horizon page. Structure for the developer slice of the query so we capture qualified traffic without fighting Perplexity head on. Honest expectation is 6 or more months.",
     supporting: [
@@ -210,7 +77,7 @@ const THEMES = [
       { kw: "best ai search engine", vol: 1300, kd: 70, overlap: 60 },
       { kw: "ai search api", vol: 10, kd: 86, overlap: 50 },
     ] },
-  { id: "t3", goal: 4, primary: { kw: "search api for coding agents", vol: 10, kd: null, tp: null, overlap: 100 },
+  t3: { id: "t3", goal: 4, primary: { kw: "search api for coding agents", vol: 10, kd: null, tp: null, overlap: 100 },
     target: "/solutions/coding-agents", targetStatus: "new",
     notes: "Coding agents segment hub, priority ICP one. Anchor accounts Cursor, Vercel, Replit. Primary head term has near zero volume because the SERP does not yet recognize this as a category. Exa has the deepest customer base in this segment. The page exists to be the canonical destination for Cursor, Vercel, and Replit customer stories.",
     supporting: [
@@ -219,7 +86,7 @@ const THEMES = [
       { kw: "code search api", vol: 0, kd: null, overlap: 80 },
       { kw: "search api for ai agents", vol: 10, kd: null, overlap: 60 },
     ] },
-  { id: "t4", goal: 4, primary: { kw: "llm search", vol: 300, kd: 18, tp: 200, overlap: 100 },
+  t4: { id: "t4", goal: 4, primary: { kw: "llm search", vol: 300, kd: 18, tp: 200, overlap: 100 },
     target: "/solutions/ai-agents", targetStatus: "new",
     notes: "AI infrastructure and agents segment hub, priority ICP two. Anchor accounts Notion AI, Anthropic, LangChain. Primary head term has manageable difficulty and lines up with how LLM app builders search. Supporting cluster captures the surrounding ecosystem like RAG, semantic search, and retrieval.",
     supporting: [
@@ -231,7 +98,7 @@ const THEMES = [
       { kw: "search api for llms", vol: 20, kd: null, overlap: 70 },
       { kw: "web search api for ai agents", vol: 10, kd: null, overlap: 60 },
     ] },
-  { id: "t5", goal: 4, primary: { kw: "competitive intelligence tools", vol: 2400, kd: 20, tp: 7400, overlap: 100 },
+  t5: { id: "t5", goal: 4, primary: { kw: "competitive intelligence tools", vol: 2400, kd: 20, tp: 7400, overlap: 100 },
     target: "/solutions/gtm-intelligence", targetStatus: "new",
     notes: "GTM intelligence segment hub, priority ICP three. Anchor accounts HubSpot, Monday.com, Clay. Highest ROI segment hub by volume. Total cluster volume about 8,000 with average KD around 10. Captures buyers evaluating tools for competitive monitoring, sales research, and enrichment.",
     supporting: [
@@ -244,7 +111,7 @@ const THEMES = [
       { kw: "company enrichment api", vol: 150, kd: 2, overlap: 50 },
       { kw: "people search api", vol: 150, kd: 6, overlap: 40 },
     ] },
-  { id: "t6", goal: 2, primary: { kw: "parallel ai", vol: 1600, kd: 36, tp: 2300, overlap: 100 },
+  t6: { id: "t6", goal: 2, primary: { kw: "parallel ai", vol: 1600, kd: 36, tp: 2300, overlap: 100 },
     target: "/versus/parallel", targetStatus: "new",
     notes: "Parallel is the closest direct product competitor, per Scott. Lowest authority of the comparison set at DR 72. Exa should win this comparison page on product depth alone.",
     supporting: [
@@ -253,7 +120,7 @@ const THEMES = [
       { kw: "parallel api", vol: 80, kd: null, overlap: 60 },
       { kw: "exa vs parallel", vol: 30, kd: null, overlap: 80 },
     ] },
-  { id: "t7", goal: 2, primary: { kw: "tavily", vol: 6800, kd: 13, tp: 2300, overlap: 100 },
+  t7: { id: "t7", goal: 2, primary: { kw: "tavily", vol: 6800, kd: 13, tp: 2300, overlap: 100 },
     target: "/versus/tavily", targetStatus: "existing-deepen", mockup: "/optimization-versus-tavily.html",
     notes: "Existing page, one of the five /versus pages already live. Refresh post Nebius acquisition. Position the acquisition as a change of priorities. Tavily is currently beating Exa on web search api rankings. Reclaiming those buyers via this page is high priority.",
     supporting: [
@@ -262,7 +129,7 @@ const THEMES = [
       { kw: "tavily alternatives", vol: 60, kd: null, overlap: 70 },
       { kw: "tavily alternative", vol: 20, kd: null, overlap: 70 },
     ] },
-  { id: "t8", goal: 2, primary: { kw: "firecrawl", vol: 22000, kd: 39, tp: 25000, overlap: 100 },
+  t8: { id: "t8", goal: 2, primary: { kw: "firecrawl", vol: 22000, kd: 39, tp: 25000, overlap: 100 },
     target: "/versus/firecrawl", targetStatus: "new",
     notes: "Firecrawl is the largest competitor by brand volume and currently out publishing Exa on commercial pages despite a smaller backlink footprint. The /versus page targets buyers researching alternatives.",
     supporting: [
@@ -271,7 +138,7 @@ const THEMES = [
       { kw: "firecrawl alternative", vol: 50, kd: null, overlap: 70 },
       { kw: "firecrawl api", vol: 250, kd: null, overlap: 60 },
     ] },
-  { id: "t9", goal: 2, primary: { kw: "serpapi", vol: 9700, kd: 18, tp: 19000, overlap: 100 },
+  t9: { id: "t9", goal: 2, primary: { kw: "serpapi", vol: 9700, kd: 18, tp: 19000, overlap: 100 },
     target: "/versus/serpapi", targetStatus: "new",
     notes: "New page. Exa already has /versus/serp targeting the generic head term, but serpapi the brand is a distinct query at 9,700 vol. SerpAPI is the traffic leader in the peer set at 112k per month at slightly higher DR (77). The page positions Exa neural index over keyword based SERP scraping.",
     supporting: [
@@ -279,7 +146,7 @@ const THEMES = [
       { kw: "serpapi alternative", vol: 70, kd: 3, overlap: 70 },
       { kw: "serpapi alternatives", vol: 50, kd: 3, overlap: 70 },
     ] },
-  { id: "t10", goal: 2, primary: { kw: "brave search api", vol: 1700, kd: 27, tp: 3100, overlap: 100 },
+  t10: { id: "t10", goal: 2, primary: { kw: "brave search api", vol: 1700, kd: 27, tp: 3100, overlap: 100 },
     target: "/versus/brave", targetStatus: "new",
     notes: "Brave is currently outranking Exa on Scott head term web search api. The /versus page captures swap intent. KD on brave api (supporting) is 9, an easy supporting win.",
     supporting: [
@@ -287,7 +154,7 @@ const THEMES = [
       { kw: "brave search api pricing", vol: 150, kd: null, overlap: 60 },
       { kw: "brave search", vol: 50000, kd: 33, overlap: 30 },
     ] },
-  { id: "t11", goal: 2, primary: { kw: "perplexity api", vol: 4900, kd: 62, tp: 2800, overlap: 100 },
+  t11: { id: "t11", goal: 2, primary: { kw: "perplexity api", vol: 4900, kd: 62, tp: 2800, overlap: 100 },
     target: "/versus/perplexity", targetStatus: "existing-deepen", mockup: "/optimization-versus-perplexity.html",
     notes: "Existing page already addresses the Perplexity API (Search API and Sonar). The deepening adds a Sonar Pro section, a developer vs consumer positioning paragraph, and FAQPage schema. Light touches. The page is already well structured.",
     supporting: [
@@ -296,7 +163,7 @@ const THEMES = [
       { kw: "perplexity sonar api", vol: 400, kd: null, overlap: 60 },
       { kw: "sonar pro", vol: 150, kd: 5, overlap: 50 },
     ] },
-  { id: "t12", goal: 3, primary: { kw: "openai web search", vol: 70, kd: 1, tp: 350, overlap: 100 },
+  t12: { id: "t12", goal: 3, primary: { kw: "openai web search", vol: 70, kd: 1, tp: 350, overlap: 100 },
     target: "/integrations/openai, /integrations/langchain, /integrations/mcp", targetStatus: "existing-deepen",
     mockup: "/optimization-integrations-openai.html",
     mockupExtra: [{ label: "LangChain mockup", url: "/optimization-integrations-langchain.html" }],
@@ -309,7 +176,70 @@ const THEMES = [
       { kw: "mcp server search", vol: 40, kd: null, overlap: 60 },
       { kw: "mcp compatible search api", vol: 0, kd: null, overlap: 50 },
     ] },
+};
+
+// ── Goals (structure) ────────────────────────────────────
+const GOALS = [
+  {
+    num: 1,
+    name: "Be the first answer for product queries",
+    description: "Rank for the head terms that describe the product. web search api, ai search engine, search api.",
+    sources: [
+      { source: "Call 1", date: "January 2026", kind: "ask", text: "Rank for &ldquo;web search api&rdquo;, the money keyword Scott named" },
+      { source: "Call 1", date: "January 2026", kind: "ask", text: "Rank for &ldquo;ai search engine&rdquo;" },
+      { source: "Strategy audit", date: "April 2026", kind: "goal", text: "Goal 1, be the first answer for product queries" },
+    ],
+    themeIds: ["t1", "t2"],
+  },
+  {
+    num: 2,
+    name: "Capture competitor comparison traffic",
+    description: "Build or refresh /versus pages for the six core competitors Scott named on Call 2.",
+    sources: [
+      { source: "Call 2", date: "April 2026", kind: "competitor", text: "Parallel, closest direct product competitor" },
+      { source: "Call 2", date: "April 2026", kind: "competitor", text: "Tavily, declining threat post Nebius" },
+      { source: "Call 2", date: "April 2026", kind: "competitor", text: "Firecrawl, beating Exa on commercial pages" },
+      { source: "Call 2", date: "April 2026", kind: "competitor", text: "SerpAPI, traffic leader in the peer set" },
+      { source: "Call 2", date: "April 2026", kind: "competitor", text: "Brave Search API, currently outranking Exa on the head term" },
+      { source: "Call 2", date: "April 2026", kind: "competitor", text: "Perplexity API, overlap with new API offering" },
+    ],
+    themeIds: ["t6", "t7", "t8", "t9", "t10", "t11"],
+  },
+  {
+    num: 3,
+    name: "Capture integration traffic",
+    description: "Deepen /integrations head terms on the 32 live integration pages with near zero organic.",
+    sources: [
+      { source: "Strategy audit", date: "April 2026", kind: "goal", text: "Goal 3, capture integration traffic. 32 live pages with near zero organic." },
+    ],
+    themeIds: ["t12"],
+  },
+  {
+    num: 4,
+    name: "Own three use case segments",
+    description: "Build segment hubs for the three priority ICP segments Scott named on Call 2.",
+    flag: { label: "Priority", kind: "priority" },
+    sources: [
+      { source: "Call 2", date: "April 2026", kind: "priority", text: "Priority segment, AI coding agents. Cursor and Vercel as anchor accounts." },
+      { source: "Call 2", date: "April 2026", kind: "priority", text: "Priority segment, AI infrastructure and agents. Notion AI, Anthropic, LangChain as anchor accounts." },
+      { source: "Call 2", date: "April 2026", kind: "priority", text: "Priority segment, GTM intelligence. HubSpot, Monday.com, Clay as anchor accounts." },
+    ],
+    themeIds: ["t3", "t4", "t5"],
+  },
+  {
+    num: 5,
+    name: "Be the knowledge layer of the internet",
+    description: "Programmatic SEO on /websets/directory. 1,545 pages already live.",
+    flag: { label: "Already strong", kind: "strong" },
+    sources: [
+      { source: "Strategy audit", date: "April 2026", kind: "goal", text: "Goal 5, knowledge layer. 1,545 /websets/directory pages live (programmatic SEO: company × executives, funding, offices). Strongest surface in the peer set." },
+    ],
+    themeIds: [],
+    emptyNote: "<b>Not in scope this pass.</b> The /websets/directory programmatic pages already lead the peer set in coverage. We will revisit during the Phase 3 mid campaign refresh to look for unmapped expansion (new entity categories, new programmatic templates).",
+  },
 ];
+
+const STATUS_LABEL = { "new": "New", "existing-deepen": "Deepen", "existing": "Existing" };
 
 function targetTag(theme) {
   if (theme.targetStatus === "new") return `<span class="tag tag-new">New</span>`;
@@ -317,14 +247,14 @@ function targetTag(theme) {
   return `<span class="tag tag-existing">Existing</span>`;
 }
 
-function renderTheme(theme, idx, maxVol) {
+// theme renderer (collapsed by default)
+function renderTheme(theme) {
   const themeVol = theme.primary.vol + theme.supporting.reduce((s, k) => s + (k.vol || 0), 0);
   const avgKD = (() => {
     const all = [theme.primary, ...theme.supporting].map((k) => k.kd).filter((k) => k !== null && k !== undefined);
     if (!all.length) return null;
     return Math.round(all.reduce((s, k) => s + k, 0) / all.length);
   })();
-  const volPct = Math.max(8, Math.round((themeVol / maxVol) * 100));
   const supportingRows = theme.supporting.map((k) => `
     <div class="kw-row">
       <div class="kw-name">${k.kw}</div>
@@ -333,7 +263,6 @@ function renderTheme(theme, idx, maxVol) {
       <div class="num">${k.overlap}%</div>
     </div>
   `).join("");
-
   const actions = theme.mockup ? `
     <div class="theme-actions">
       <a href="${theme.mockup}" class="button primary">
@@ -346,21 +275,20 @@ function renderTheme(theme, idx, maxVol) {
 
   return `
     <article class="theme" id="${theme.id}">
-      <div class="theme-summary" data-toggle>
-        <div class="t-num">Theme ${String(idx + 1).padStart(2, "0")}</div>
+      <div class="theme-summary" data-theme-toggle>
+        <div class="t-num">${theme.id.replace("t", "Theme ")}</div>
         <div class="t-primary">
           <h3>${theme.primary.kw}</h3>
           <div class="target">${targetTag(theme)}<span>${theme.target}</span></div>
         </div>
-        <span class="goal-pill goal-${theme.goal}"><span class="dot"></span>${GOAL_LABELS[theme.goal]}</span>
         <div class="t-stats">
           <div class="stat-mini"><span class="lbl">Primary vol</span><span class="val">${num(theme.primary.vol)}</span></div>
           <div class="stat-mini"><span class="lbl">Avg KD</span><span class="val">${avgKD === null ? "·" : avgKD}</span></div>
         </div>
         <div class="t-volume-chart">
-          <div class="chart-lbl">Theme volume</div>
-          <div class="chart-bar"><div class="fill" style="width:${volPct}%"></div></div>
-          <div class="chart-val">${num(themeVol)} searches</div>
+          <div class="chart-lbl">Theme vol</div>
+          <div class="chart-bar"><div class="fill" style="width:${Math.min(100, Math.round(themeVol / 750))}%"></div></div>
+          <div class="chart-val">${num(themeVol)}</div>
         </div>
         <div class="chevron-cell">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -392,14 +320,81 @@ function renderTheme(theme, idx, maxVol) {
   `;
 }
 
-const maxThemeVol = Math.max(...THEMES.map((t) => t.primary.vol + t.supporting.reduce((s, k) => s + (k.vol || 0), 0)));
-document.getElementById("themes").innerHTML = THEMES.map((t, i) => renderTheme(t, i, maxThemeVol)).join("");
-document.querySelectorAll(".theme-summary[data-toggle]").forEach((s) => {
-  s.addEventListener("click", () => {
+// goal renderer
+function renderGoal(goal, maxVol) {
+  const themes = goal.themeIds.map((id) => THEMES_BY_ID[id]);
+  const totalVol = themes.reduce((s, t) => s + (t.primary.vol || 0), 0);
+  const volPct = maxVol > 0 ? Math.max(8, Math.round((totalVol / maxVol) * 100)) : 0;
+  const flag = goal.flag
+    ? `<span class="goal-card-flag ${goal.flag.kind}"><span class="dot"></span>${goal.flag.label}</span>`
+    : `<span class="goal-card-flag"><span class="dot"></span>${themes.length} ${themes.length === 1 ? "theme" : "themes"}</span>`;
+
+  const sourcesHtml = goal.sources.map((s) => `
+    <div class="source-row">
+      <div class="source-name">${s.source}<span class="date">${s.date}</span></div>
+      <div><span class="source-kind">${s.kind}</span></div>
+      <div class="source-text">${s.text}</div>
+    </div>
+  `).join("");
+
+  const themesHtml = themes.length
+    ? `<div class="theme-stack">${themes.map(renderTheme).join("")}</div>`
+    : `<div class="goal-empty-note">${goal.emptyNote || ""}</div>`;
+
+  return `
+    <article class="goal-card ${goal.themeIds.length === 0 ? "muted" : ""}" data-goal="${goal.num}">
+      <div class="goal-card-summary" data-goal-toggle>
+        <div class="goal-card-num">${String(goal.num).padStart(2, "0")}</div>
+        <div class="goal-card-name">
+          <div class="label">${goal.name}</div>
+          <div class="description">${goal.description}</div>
+        </div>
+        ${flag}
+        <div class="goal-card-stats">
+          <div class="stat-mini"><span class="lbl">Sources</span><span class="val">${goal.sources.length}</span></div>
+          <div class="stat-mini"><span class="lbl">Themes</span><span class="val">${themes.length}</span></div>
+        </div>
+        <div class="goal-card-chart">
+          <div class="chart-lbl">Head term vol</div>
+          <div class="chart-bar"><div class="fill" style="width:${volPct}%"></div></div>
+          <div class="chart-val">${num(totalVol)}</div>
+        </div>
+        <div class="goal-card-chevron">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="goal-card-body">
+
+        <div class="goal-subsection">
+          <span class="goal-sub-eyebrow">Where this goal came from</span>
+          <div class="goal-sources">${sourcesHtml}</div>
+        </div>
+
+        <div class="goal-subsection">
+          <span class="goal-sub-eyebrow">How we are targeting it</span>
+          ${themesHtml}
+        </div>
+
+      </div>
+    </article>
+  `;
+}
+
+// Render
+const maxVol = Math.max(...GOALS.map((g) => g.themeIds.reduce((s, id) => s + THEMES_BY_ID[id].primary.vol, 0)));
+document.getElementById("goals-stack").innerHTML = GOALS.map((g) => renderGoal(g, maxVol)).join("");
+
+// Goal accordion
+document.querySelectorAll("[data-goal-toggle]").forEach((s) => {
+  s.addEventListener("click", () => s.closest(".goal-card").classList.toggle("open"));
+});
+// Nested theme accordion. stopPropagation so opening a theme doesn't close the goal.
+document.querySelectorAll("[data-theme-toggle]").forEach((s) => {
+  s.addEventListener("click", (e) => {
+    e.stopPropagation();
     s.closest(".theme").classList.toggle("open");
   });
 });
-renderCoverage();
 </script>
 </body>
 </html>
