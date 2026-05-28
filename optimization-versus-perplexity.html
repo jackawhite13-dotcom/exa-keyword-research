@@ -48,15 +48,12 @@
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 02</div>
+      <span class="section-eyebrow">Step 02</span>
       <h2>Title tag and meta description</h2>
     </div>
     <div class="compare">
       <div class="compare-col"><div class="lbl">Current title</div><div class="val mono">Exa vs Perplexity API: Neural Search vs Black Box Answers (2026)</div></div>
       <div class="compare-col proposed"><div class="lbl">Proposed title</div><div class="val mono">Exa vs Perplexity API (Sonar), Neural Search Comparison (2026)</div></div>
-    </div>
-    <div class="rationale">
-      <b>Why:</b> &ldquo;Sonar&rdquo; in the title captures the active brand search now that Perplexity is pushing Sonar as the API name. &ldquo;Black Box Answers&rdquo; reads editorial. Drop it. &ldquo;Neural Search Comparison&rdquo; aligns with /versus/tavily.
     </div>
     <div class="compare">
       <div class="compare-col"><div class="lbl">Current meta description</div><div class="val">Not explicitly set.</div></div>
@@ -66,78 +63,92 @@
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 03</div>
-      <h2>Section by section</h2>
-      <p class="section-sub">Click any step to expand the change detail.</p>
+      <span class="section-eyebrow">Step 03</span>
+      <h2>How the page reads after the changes ship</h2>
+      <p class="section-sub">A scroll through the proposed /versus/perplexity page on exa.ai.</p>
     </div>
 
-    <div class="steps">
+    <div class="legend">
+      <span class="legend-item legend-keep"><span class="dot"></span>Keep</span>
+      <span class="legend-item legend-modify"><span class="dot"></span>Modify</span>
+      <span class="legend-item legend-new"><span class="dot"></span>New</span>
+    </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-keep">Keep</span><span class="step-tag">H1</span></div>
-            <h3>Hero, &ldquo;Exa vs. Perplexity API&rdquo;</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>H1 already targets the head term. Leave. Optional, add subhead &ldquo;Including the Sonar and Sonar Pro models&rdquo; for the long tail.</p>
+    <div class="mock-page">
+      <div class="mock-chrome">
+        <div class="mock-dots"><span></span><span></span><span></span></div>
+        <div class="mock-url">exa.ai/versus/perplexity</div>
+        <div class="mock-tab">Exa vs Perplexity API (Sonar), Neural Search Comparison (2026)</div>
+      </div>
+      <div class="mock-nav">
+        <div class="mock-nav-logo">exa</div>
+        <div class="mock-nav-links"><span>Products</span><span>Resources</span><span>Pricing</span><span>Blog</span><span>Docs</span></div>
+        <div class="mock-nav-cta"><span class="signin">Sign in</span><a class="mock-btn-primary">Try API for free</a></div>
+      </div>
+
+      <div class="mock-section s-keep">
+        <span class="mock-status s-keep">Keep · H1</span>
+        <h1>Exa vs. Perplexity API</h1>
+        <p class="sub">Including the Sonar and Sonar Pro models.</p>
+        <div class="ctas">
+          <a class="mock-btn-primary">Try API for free</a>
+          <a class="mock-btn-secondary">Contact sales</a>
         </div>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-new">New</span><span class="step-tag">P</span></div>
-            <h3>Developer vs consumer positioning paragraph</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>New 60 word paragraph directly above the Key Differentiators section.</p>
-          <p><b>Draft copy.</b> &ldquo;Perplexity built a consumer answer engine and then exposed an API. Exa built an API for AI agents from day one. That difference shows up at every layer, latency, full page content, neural retrieval, and flat pricing. Below is the side by side, with benchmark data from a 500 query real world evaluation.&rdquo;</p>
-          <p>The missing one line framing that buyers carry away.</p>
+      <div class="mock-section s-new">
+        <span class="mock-status s-new">New paragraph</span>
+        <h2>Developer first vs consumer first</h2>
+        <p>Perplexity built a consumer answer engine and then exposed an API. Exa built an API for AI agents from day one. That difference shows up at every layer, latency, full page content, neural retrieval, and flat pricing. Below is the side by side, with benchmark data from a 500 query real world evaluation.</p>
+      </div>
+
+      <div class="mock-section s-keep">
+        <span class="mock-status s-keep">Keep · 7 H3s</span>
+        <h2>Key Differentiators</h2>
+        <p class="gray">All seven existing H3s stay. H3 5 (&ldquo;Exa's flat pricing vs Perplexity's two pricing surfaces&rdquo;) captures &ldquo;perplexity api pricing&rdquo; (1,400 vol, KD 40) directly.</p>
+        <div class="mock-benchmark">
+          <table>
+            <thead><tr><th>Metric</th><th class="right">Exa</th><th class="right">Perplexity API</th></tr></thead>
+            <tbody>
+              <tr class="win"><td>Accuracy</td><td class="right">64.8%</td><td class="right">60.1%</td></tr>
+              <tr class="win"><td>Latency (p95)</td><td class="right">1.5s</td><td class="right">5.1s</td></tr>
+              <tr class="win"><td>Domain Filters</td><td class="right">1,200</td><td class="right">20 (Sonar)</td></tr>
+              <tr class="win"><td>Full Page Content</td><td class="right">Yes (no cap)</td><td class="right">4,096 tokens max</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-keep">Keep</span><span class="step-tag">H2</span></div>
-            <h3>Key Differentiators (7 H3s)</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>Strong section. Leave all seven H3s. H3 5 (&ldquo;Exa's flat pricing vs Perplexity's two pricing surfaces&rdquo;) captures &ldquo;perplexity api pricing&rdquo; (1,400 vol, KD 40) directly.</p>
+      <div class="mock-section s-new">
+        <span class="mock-status s-new">New H3</span>
+        <h2>Sonar Pro, what it is and when to use it</h2>
+        <p>Sonar is Perplexity's LLM synthesized answer endpoint. Sonar Pro adds longer outputs and stronger reasoning at a higher price tier. Both are good for chat style answers but trade transparency for synthesis. You get a generated response instead of the retrieval results you can re rank, filter, or feed into your own LLM. Exa's API returns the underlying retrieval so your agent owns the synthesis step.</p>
+      </div>
+
+      <div class="mock-section s-keep">
+        <span class="mock-status s-keep">Keep</span>
+        <h2>Feature Comparison</h2>
+        <p class="gray">Existing comparison table. Strong content. Refresh pricing column quarterly.</p>
+      </div>
+
+      <div class="mock-section s-keep tint">
+        <span class="mock-status s-keep">Keep</span>
+        <h2>Trusted by the fastest growing AI companies</h2>
+        <div class="mock-customer-row">
+          <span class="lbl">Customers</span>
+          <span>Cognition</span><span>HubSpot</span><span>monday.com</span><span>CodeRabbit</span><span>OpenRouter</span><span>Notion AI</span>
         </div>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-new">New</span><span class="step-tag">H3</span></div>
-            <h3>Sonar Pro, what it is and when to use it</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>New H3 under Key Differentiators. Captures &ldquo;sonar pro&rdquo; (150 vol, KD 5) and &ldquo;perplexity sonar api&rdquo; (400 vol) explicitly.</p>
-          <p><b>Draft copy.</b> &ldquo;Sonar is Perplexity's LLM synthesized answer endpoint. Sonar Pro adds longer outputs and stronger reasoning at a higher price tier. Both are good for chat style answers but trade transparency for synthesis. You get a generated response instead of the retrieval results you can re rank, filter, or feed into your own LLM. Exa's API returns the underlying retrieval so your agent owns the synthesis step.&rdquo;</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-keep">Keep</span><span class="step-tag">H2</span></div>
-            <h3>Feature Comparison, Trusted by, FAQ, Closer</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>Strong sections. Refresh the FAQ to include one Sonar specific question (&ldquo;What is the difference between Perplexity Sonar and Sonar Pro?&rdquo;) and add the FAQPage JSON-LD.</p>
+      <div class="mock-section s-modify">
+        <span class="mock-status s-modify">Modify</span>
+        <h2>Frequently asked questions</h2>
+        <p>FAQPage schema attached. Add one Sonar specific question.</p>
+        <div class="mock-faq">
+          <details open><summary>What is the difference between Perplexity Sonar and Sonar Pro?</summary><p>Sonar is the base LLM synthesized answer endpoint. Sonar Pro adds longer outputs and stronger reasoning at a higher price tier.</p></details>
+          <details><summary>How does Exa compare to Perplexity Sonar?</summary><p>Exa returns retrieval results that your agent owns. Sonar returns a synthesized answer.</p></details>
+          <details><summary>How does Exa's pricing compare to Perplexity API?</summary><p>Flat per request pricing on Exa. Perplexity bills across two pricing surfaces (Search API + Sonar models).</p></details>
+          <details><summary>Can I switch from Sonar to Exa without rewriting my prompt logic?</summary><p>Yes. Use Exa to retrieve, then your existing LLM call to synthesize. Migration takes one afternoon.</p></details>
         </div>
       </div>
 
@@ -146,7 +157,7 @@
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 04</div>
+      <span class="section-eyebrow">Step 04</span>
       <h2>Keyword instances after the optimization</h2>
     </div>
     <div class="kw-chart">
@@ -161,9 +172,9 @@
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 05</div>
+      <span class="section-eyebrow">Step 05</span>
       <h2>Schema markup to add</h2>
-      <p class="section-sub">Single change. Add FAQPage JSON-LD on the existing FAQ section. The cheapest GEO win on the page.</p>
+      <p class="section-sub">Single change. Add FAQPage JSON-LD on the existing FAQ section.</p>
     </div>
   </section>
 
@@ -174,9 +185,6 @@
 </div>
 
 <script>
-document.querySelectorAll(".step-header[data-toggle]").forEach((h) => {
-  h.addEventListener("click", () => h.closest(".step").classList.toggle("open"));
-});
 document.querySelectorAll(".accordion-head[data-toggle]").forEach((h) => {
   h.addEventListener("click", () => h.closest(".accordion").classList.toggle("open"));
 });

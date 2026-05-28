@@ -40,7 +40,7 @@
       </p>
       <ul>
         <li><b>Title and H1 lead with the head term, not the brand pair.</b> &ldquo;OpenAI Web Search Tool with Exa&rdquo; vs &ldquo;Exa + OpenAI&rdquo;.</li>
-        <li><b>Code snippet front and center.</b> Above the fold, 3 line setup. The single highest value change.</li>
+        <li><b>Code snippet front and center.</b> Above the fold, 3 line setup.</li>
         <li><b>How to walkthrough with HowTo schema.</b> Step 1, 2, 3 earns rich snippet eligibility and Gemini and ChatGPT citation.</li>
         <li><b>Six question FAQ with FAQPage schema.</b> Same playbook as /exa-api.</li>
       </ul>
@@ -49,15 +49,12 @@
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 02</div>
+      <span class="section-eyebrow">Step 02</span>
       <h2>Title tag and meta description</h2>
     </div>
     <div class="compare">
       <div class="compare-col"><div class="lbl">Current title</div><div class="val mono">Exa + OpenAI, Partner Integration</div></div>
       <div class="compare-col proposed"><div class="lbl">Proposed title</div><div class="val mono">OpenAI Web Search Tool with Exa, Integration Guide</div></div>
-    </div>
-    <div class="rationale">
-      <b>Why:</b> &ldquo;OpenAI Web Search&rdquo; is the actual head term (70 vol, KD 1, easy win). The &ldquo;Tool&rdquo; suffix matches OpenAI's own function calling vocabulary. &ldquo;Partner Integration&rdquo; is meaningless to organic search.
     </div>
     <div class="compare">
       <div class="compare-col"><div class="lbl">Current meta description</div><div class="val">Not explicitly set.</div></div>
@@ -67,38 +64,44 @@
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 03</div>
-      <h2>Section by section</h2>
-      <p class="section-sub">Click any step to expand the change detail.</p>
+      <span class="section-eyebrow">Step 03</span>
+      <h2>How the page reads after the changes ship</h2>
+      <p class="section-sub">A scroll through the proposed /integrations/openai page on exa.ai.</p>
     </div>
 
-    <div class="steps">
+    <div class="legend">
+      <span class="legend-item legend-keep"><span class="dot"></span>Keep</span>
+      <span class="legend-item legend-modify"><span class="dot"></span>Modify</span>
+      <span class="legend-item legend-new"><span class="dot"></span>New</span>
+    </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-modify">Modify</span><span class="step-tag">H1</span></div>
-            <h3>Hero</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p><b>Current.</b> H1 &ldquo;Exa + OpenAI&rdquo;. Sub &ldquo;Build agents on OpenAI with direct access to the web&rdquo;.</p>
-          <p><b>Proposed.</b> H1 &ldquo;OpenAI Web Search Tool with Exa&rdquo;. Sub &ldquo;Add real time web search to GPT-4o and the Assistants API in 3 lines of code.&rdquo;</p>
+    <div class="mock-page">
+      <div class="mock-chrome">
+        <div class="mock-dots"><span></span><span></span><span></span></div>
+        <div class="mock-url">exa.ai/integrations/openai</div>
+        <div class="mock-tab">OpenAI Web Search Tool with Exa, Integration Guide</div>
+      </div>
+      <div class="mock-nav">
+        <div class="mock-nav-logo">exa</div>
+        <div class="mock-nav-links"><span>Products</span><span>Resources</span><span>Pricing</span><span>Blog</span><span>Docs</span></div>
+        <div class="mock-nav-cta"><span class="signin">Sign in</span><a class="mock-btn-primary">Try API for free</a></div>
+      </div>
+
+      <div class="mock-section s-modify">
+        <span class="mock-status s-modify">Modify · H1</span>
+        <h1>OpenAI Web Search Tool with Exa</h1>
+        <p class="sub">Add real time web search to GPT-4o and the Assistants API in 3 lines of code.</p>
+        <div class="ctas">
+          <a class="mock-btn-primary">Try API for free</a>
+          <a class="mock-btn-secondary">Tool calling guide</a>
         </div>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-new">New</span><span class="step-tag">Code</span></div>
-            <h3>Above the fold setup snippet</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>The single most important change. Code block before any prose. Dev visiting cold sees the snippet first.</p>
-<pre>from openai import OpenAI
+      <div class="mock-section s-new">
+        <span class="mock-status s-new">New section</span>
+        <h2>Quickstart in 3 lines</h2>
+        <p>The Exa SDK ships the OpenAI function spec for you. Dev visits cold, sees the snippet, ships in 5 minutes.</p>
+        <div class="mock-code">from openai import OpenAI
 from exa_py import Exa
 
 openai = OpenAI()
@@ -111,86 +114,46 @@ response = openai.chat.completions.create(
     model="gpt-4o",
     messages=[{"role": "user", "content": "What launched today in AI?"}],
     tools=tools,
-)</pre>
-          <p>Three things the snippet should communicate, it is short, the SDK does the OpenAI function spec wiring for you, and the result is a real call against GPT-4o.</p>
-        </div>
+)</div>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-new">New</span><span class="step-tag">H2</span></div>
-            <h3>How to add OpenAI web search with Exa (step by step)</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>HowTo structured walkthrough. Three steps. Eligible for HowTo rich result.</p>
-          <ul>
-            <li><b>Step 1.</b> Install the SDKs (<code>pip install openai exa_py</code>)</li>
-            <li><b>Step 2.</b> Register the Exa tool with your OpenAI client (<code>exa.openai_tool()</code>)</li>
-            <li><b>Step 3.</b> Call <code>chat.completions.create</code> with <code>tools=tools</code> and let GPT-4o trigger the search when it needs the web</li>
-          </ul>
-        </div>
+      <div class="mock-section s-new">
+        <span class="mock-status s-new">New section</span>
+        <h2>How to add OpenAI web search with Exa</h2>
+        <p>HowTo schema attached. Three steps eligible for rich result.</p>
+        <p><b>Step 1.</b> Install the SDKs. <code>pip install openai exa_py</code></p>
+        <p><b>Step 2.</b> Register the Exa tool with your OpenAI client. <code>exa.openai_tool()</code></p>
+        <p><b>Step 3.</b> Call <code>chat.completions.create</code> with <code>tools=tools</code> and let GPT-4o trigger the search when it needs the web.</p>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-modify">Modify</span><span class="step-tag">H2</span></div>
-            <h3>Overview</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>Trim from a generic marketing block to one paragraph answering: what does adding Exa to OpenAI actually give me? Token efficient highlights, full page content, p95 1.7s latency, 1,200 domain filters.</p>
-        </div>
+      <div class="mock-section s-modify">
+        <span class="mock-status s-modify">Modify</span>
+        <h2>Overview</h2>
+        <p class="gray">Trimmed from a generic marketing block to one paragraph answering: what does adding Exa to OpenAI actually give me? Token efficient highlights, full page content, p95 1.7s latency, 1,200 domain filters.</p>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-modify">Modify</span><span class="step-tag">H2</span></div>
-            <h3>Quick links, renamed to Docs, SDK, and examples</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>Three CTAs. Tool calling guide, Python SDK quickstart, sample repo on GitHub.</p>
-        </div>
+      <div class="mock-section s-modify">
+        <span class="mock-status s-modify">Rename</span>
+        <h2>Docs, SDK, and examples</h2>
+        <p class="gray">Was &ldquo;Quick links&rdquo;. Three CTAs: Tool calling guide, Python SDK quickstart, sample repo on GitHub.</p>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-modify">Modify</span><span class="step-tag">H2</span></div>
-            <h3>Related partners, renamed to Other LLM integrations</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>Rename and link to /integrations/anthropic, /integrations/langchain, /integrations/mcp. Strengthens the topical cluster.</p>
-        </div>
+      <div class="mock-section s-modify">
+        <span class="mock-status s-modify">Rename</span>
+        <h2>Other LLM integrations</h2>
+        <p class="gray">Was &ldquo;Related partners&rdquo;. Cross link to /integrations/anthropic, /integrations/langchain, /integrations/mcp. Strengthens the topical cluster.</p>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-new">New</span><span class="step-tag">H2</span></div>
-            <h3>FAQ (with FAQPage schema)</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>Six questions.</p>
-          <ul>
-            <li>Does OpenAI have a built in web search API?</li>
-            <li>How do I add web search to GPT-4o?</li>
-            <li>What does the OpenAI plus Exa integration cost?</li>
-            <li>Can I use Exa with the OpenAI Assistants API?</li>
-            <li>How does Exa's OpenAI integration compare to Tavily's?</li>
-            <li>Does Exa support streaming responses with OpenAI?</li>
-          </ul>
+      <div class="mock-section s-new">
+        <span class="mock-status s-new">New section</span>
+        <h2>Frequently asked questions</h2>
+        <div class="mock-faq">
+          <details open><summary>Does OpenAI have a built in web search API?</summary><p>OpenAI ships browsing inside ChatGPT but the API does not have a first party web search endpoint. Use a search tool like Exa.</p></details>
+          <details><summary>How do I add web search to GPT-4o?</summary><p>Call <code>exa.openai_tool()</code> and pass the result as a tool in your OpenAI chat completion. GPT-4o decides when to call it.</p></details>
+          <details><summary>What does the OpenAI plus Exa integration cost?</summary><p>OpenAI tokens at OpenAI rates plus Exa per request pricing. Most agents land under $0.02 per turn.</p></details>
+          <details><summary>Can I use Exa with the OpenAI Assistants API?</summary><p>Yes. Register Exa as a function tool on the assistant.</p></details>
+          <details><summary>How does Exa's OpenAI integration compare to Tavily?</summary><p>Same call signature pattern. Exa wins on latency and full page content. See /versus/tavily.</p></details>
+          <details><summary>Does Exa support streaming responses with OpenAI?</summary><p>Yes. Streaming flows through OpenAI's stream and the Exa tool call resolves inline.</p></details>
         </div>
       </div>
 
@@ -199,7 +162,7 @@ response = openai.chat.completions.create(
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 04</div>
+      <span class="section-eyebrow">Step 04</span>
       <h2>Keyword instances after the optimization</h2>
     </div>
     <div class="kw-chart">
@@ -214,9 +177,9 @@ response = openai.chat.completions.create(
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 05</div>
+      <span class="section-eyebrow">Step 05</span>
       <h2>Schema markup to add</h2>
-      <p class="section-sub">Three schema blocks. HowTo on the step by step section, FAQPage on the FAQ, SoftwareSourceCode on the snippet.</p>
+      <p class="section-sub">Three schema blocks. HowTo on the walkthrough, FAQPage on the FAQ, SoftwareSourceCode on the snippet.</p>
     </div>
 
     <div class="accordion">
@@ -233,24 +196,12 @@ response = openai.chat.completions.create(
   "name": "How to add web search to OpenAI agents with Exa",
   "totalTime": "PT5M",
   "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Install the SDKs",
-      "text": "Run `pip install openai exa_py` to install both clients."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Register the Exa tool",
-      "text": "Call exa.openai_tool() to get the OpenAI function spec for Exa search."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Call GPT-4o with the tool",
-      "text": "Pass `tools=[exa.openai_tool()]` into chat.completions.create. GPT-4o triggers the search when needed."
-    }
+    { "@type": "HowToStep", "position": 1, "name": "Install the SDKs",
+      "text": "Run `pip install openai exa_py`." },
+    { "@type": "HowToStep", "position": 2, "name": "Register the Exa tool",
+      "text": "Call exa.openai_tool() to get the OpenAI function spec." },
+    { "@type": "HowToStep", "position": 3, "name": "Call GPT-4o with the tool",
+      "text": "Pass `tools=[exa.openai_tool()]` to chat.completions.create." }
   ]
 }</pre>
       </div>
@@ -269,9 +220,6 @@ response = openai.chat.completions.create(
 </div>
 
 <script>
-document.querySelectorAll(".step-header[data-toggle]").forEach((h) => {
-  h.addEventListener("click", () => h.closest(".step").classList.toggle("open"));
-});
 document.querySelectorAll(".accordion-head[data-toggle]").forEach((h) => {
   h.addEventListener("click", () => h.closest(".accordion").classList.toggle("open"));
 });

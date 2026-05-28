@@ -274,15 +274,6 @@ function renderTheme(theme) {
           <h3>${theme.primary.kw}</h3>
           <div class="target">${targetTag(theme)}<span>${theme.target}</span></div>
         </div>
-        <div class="t-stats">
-          <div class="stat-mini"><span class="lbl">Primary vol</span><span class="val">${num(theme.primary.vol)}</span></div>
-          <div class="stat-mini"><span class="lbl">Avg KD</span><span class="val">${avgKD === null ? "·" : avgKD}</span></div>
-        </div>
-        <div class="t-volume-chart">
-          <div class="chart-lbl">Theme vol</div>
-          <div class="chart-bar"><div class="fill" style="width:${Math.min(100, Math.round(themeVol / 750))}%"></div></div>
-          <div class="chart-val">${num(themeVol)}</div>
-        </div>
         <div class="chevron-cell">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
@@ -314,13 +305,8 @@ function renderTheme(theme) {
 }
 
 // goal renderer
-function renderGoal(goal, maxVol) {
+function renderGoal(goal) {
   const themes = goal.themeIds.map((id) => THEMES_BY_ID[id]);
-  const totalVol = themes.reduce((s, t) => s + (t.primary.vol || 0), 0);
-  const volPct = maxVol > 0 ? Math.max(8, Math.round((totalVol / maxVol) * 100)) : 0;
-  const flag = goal.flag
-    ? `<span class="goal-card-flag ${goal.flag.kind}"><span class="dot"></span>${goal.flag.label}</span>`
-    : `<span class="goal-card-flag"><span class="dot"></span>${themes.length} ${themes.length === 1 ? "theme" : "themes"}</span>`;
 
   const sourcesHtml = goal.sources.map((s) => `
     <div class="source-row">
@@ -340,17 +326,6 @@ function renderGoal(goal, maxVol) {
         <div class="goal-card-num">${String(goal.num).padStart(2, "0")}</div>
         <div class="goal-card-name">
           <div class="label">${goal.name}</div>
-          <div class="description">${goal.description}</div>
-        </div>
-        ${flag}
-        <div class="goal-card-stats">
-          <div class="stat-mini"><span class="lbl">Sources</span><span class="val">${goal.sources.length}</span></div>
-          <div class="stat-mini"><span class="lbl">Themes</span><span class="val">${themes.length}</span></div>
-        </div>
-        <div class="goal-card-chart">
-          <div class="chart-lbl">Head term vol</div>
-          <div class="chart-bar"><div class="fill" style="width:${volPct}%"></div></div>
-          <div class="chart-val">${num(totalVol)}</div>
         </div>
         <div class="goal-card-chevron">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -374,8 +349,7 @@ function renderGoal(goal, maxVol) {
 }
 
 // Render
-const maxVol = Math.max(...GOALS.map((g) => g.themeIds.reduce((s, id) => s + THEMES_BY_ID[id].primary.vol, 0)));
-document.getElementById("goals-stack").innerHTML = GOALS.map((g) => renderGoal(g, maxVol)).join("");
+document.getElementById("goals-stack").innerHTML = GOALS.map(renderGoal).join("");
 
 // Goal accordion
 document.querySelectorAll("[data-goal-toggle]").forEach((s) => {

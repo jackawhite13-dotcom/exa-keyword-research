@@ -48,15 +48,12 @@
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 02</div>
+      <span class="section-eyebrow">Step 02</span>
       <h2>Title tag and meta description</h2>
     </div>
     <div class="compare">
       <div class="compare-col"><div class="lbl">Current title</div><div class="val mono">Exa + LangChain, Partner Integration</div></div>
       <div class="compare-col proposed"><div class="lbl">Proposed title</div><div class="val mono">LangChain Web Search Tool with Exa, Integration Guide</div></div>
-    </div>
-    <div class="rationale">
-      <b>Why:</b> Identical pattern to /integrations/openai. &ldquo;LangChain Web Search&rdquo; matches LangChain's own tool taxonomy. &ldquo;Partner Integration&rdquo; is a marketing term, not a search term.
     </div>
     <div class="compare">
       <div class="compare-col"><div class="lbl">Current meta description</div><div class="val">Not explicitly set.</div></div>
@@ -66,37 +63,43 @@
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 03</div>
-      <h2>Section by section</h2>
-      <p class="section-sub">Click any step to expand the change detail.</p>
+      <span class="section-eyebrow">Step 03</span>
+      <h2>How the page reads after the changes ship</h2>
+      <p class="section-sub">A scroll through the proposed /integrations/langchain page on exa.ai.</p>
     </div>
 
-    <div class="steps">
+    <div class="legend">
+      <span class="legend-item legend-keep"><span class="dot"></span>Keep</span>
+      <span class="legend-item legend-modify"><span class="dot"></span>Modify</span>
+      <span class="legend-item legend-new"><span class="dot"></span>New</span>
+    </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-modify">Modify</span><span class="step-tag">H1</span></div>
-            <h3>Hero</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p><b>Current.</b> H1 &ldquo;Exa + LangChain&rdquo;. Sub &ldquo;Build agents on LangChain with direct access to the web.&rdquo;</p>
-          <p><b>Proposed.</b> H1 &ldquo;LangChain Web Search Tool with Exa&rdquo;. Sub &ldquo;ExaSearchRetriever for RAG, ExaSearchResults tool for agents, full LangGraph and streaming support.&rdquo;</p>
+    <div class="mock-page">
+      <div class="mock-chrome">
+        <div class="mock-dots"><span></span><span></span><span></span></div>
+        <div class="mock-url">exa.ai/integrations/langchain</div>
+        <div class="mock-tab">LangChain Web Search Tool with Exa, Integration Guide</div>
+      </div>
+      <div class="mock-nav">
+        <div class="mock-nav-logo">exa</div>
+        <div class="mock-nav-links"><span>Products</span><span>Resources</span><span>Pricing</span><span>Blog</span><span>Docs</span></div>
+        <div class="mock-nav-cta"><span class="signin">Sign in</span><a class="mock-btn-primary">Try API for free</a></div>
+      </div>
+
+      <div class="mock-section s-modify">
+        <span class="mock-status s-modify">Modify · H1</span>
+        <h1>LangChain Web Search Tool with Exa</h1>
+        <p class="sub">ExaSearchRetriever for RAG, ExaSearchResults tool for agents, full LangGraph and streaming support.</p>
+        <div class="ctas">
+          <a class="mock-btn-primary">Try API for free</a>
+          <a class="mock-btn-secondary">LangChain integration guide</a>
         </div>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-new">New</span><span class="step-tag">Code</span></div>
-            <h3>Above the fold setup snippet</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-<pre>from langchain_exa import ExaSearchRetriever
+      <div class="mock-section s-new">
+        <span class="mock-status s-new">New section</span>
+        <h2>Quickstart in 4 lines</h2>
+        <div class="mock-code">from langchain_exa import ExaSearchRetriever
 from langchain_openai import ChatOpenAI
 
 retriever = ExaSearchRetriever(exa_api_key="...", k=5)
@@ -105,73 +108,40 @@ llm = ChatOpenAI(model="gpt-4o")
 docs = retriever.invoke("What launched today in AI?")
 answer = llm.invoke(
     f"Using these sources, answer the question:\n{docs}"
-)</pre>
-          <p>Four lines of setup, real call. Optional second snippet for the LangGraph tool wiring (ExaSearchResults).</p>
-        </div>
+)</div>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-new">New</span><span class="step-tag">H2</span></div>
-            <h3>How to add LangChain web search with Exa (step by step)</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>HowTo walkthrough. Three steps. Mirrors the OpenAI page's structure.</p>
-          <ul>
-            <li><b>Step 1.</b> Install (<code>pip install langchain-exa langchain-openai</code>)</li>
-            <li><b>Step 2.</b> Initialize ExaSearchRetriever (RAG) or ExaSearchResults (agent tool)</li>
-            <li><b>Step 3.</b> Wire into your chain or LangGraph node</li>
-          </ul>
-        </div>
+      <div class="mock-section s-new">
+        <span class="mock-status s-new">New section</span>
+        <h2>How to add LangChain web search with Exa</h2>
+        <p>HowTo schema attached. Three steps eligible for rich result.</p>
+        <p><b>Step 1.</b> Install. <code>pip install langchain-exa langchain-openai</code></p>
+        <p><b>Step 2.</b> Initialize ExaSearchRetriever (RAG) or ExaSearchResults (agent tool).</p>
+        <p><b>Step 3.</b> Wire into your chain or LangGraph node.</p>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-modify">Modify</span><span class="step-tag">H2</span></div>
-            <h3>Overview</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>Trim to one paragraph naming the actual primitives. ExaSearchRetriever for RAG, ExaSearchResults tool for agents, async and streaming support, LangGraph compatibility.</p>
-        </div>
+      <div class="mock-section s-modify">
+        <span class="mock-status s-modify">Modify</span>
+        <h2>Overview</h2>
+        <p class="gray">Trimmed to one paragraph naming the actual primitives. ExaSearchRetriever for RAG, ExaSearchResults tool for agents, async and streaming support, LangGraph compatibility.</p>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-modify">Modify</span><span class="step-tag">H2</span></div>
-            <h3>Quick links and Related partners</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>Rename to <b>&ldquo;Docs, SDK, and examples&rdquo;</b> and <b>&ldquo;Other LLM integrations&rdquo;</b>. Cross link to /integrations/openai, /integrations/anthropic, /integrations/mcp.</p>
-        </div>
+      <div class="mock-section s-modify">
+        <span class="mock-status s-modify">Rename</span>
+        <h2>Docs, SDK, and examples · Other LLM integrations</h2>
+        <p class="gray">Was &ldquo;Quick links&rdquo; and &ldquo;Related partners&rdquo;. Cross link to /integrations/openai, /integrations/anthropic, /integrations/mcp.</p>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-new">New</span><span class="step-tag">H2</span></div>
-            <h3>FAQ (with FAQPage schema)</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>Six questions.</p>
-          <ul>
-            <li>How do I add web search to a LangChain agent?</li>
-            <li>What is the difference between ExaSearchRetriever and ExaSearchResults?</li>
-            <li>Does Exa work with LangGraph?</li>
-            <li>How does Exa compare to LangChain's built in search tools?</li>
-            <li>Can I use Exa with streaming and async LangChain chains?</li>
-            <li>What does the LangChain plus Exa integration cost?</li>
-          </ul>
+      <div class="mock-section s-new">
+        <span class="mock-status s-new">New section</span>
+        <h2>Frequently asked questions</h2>
+        <div class="mock-faq">
+          <details open><summary>How do I add web search to a LangChain agent?</summary><p>Initialize ExaSearchResults, register as a tool on your agent, then call invoke().</p></details>
+          <details><summary>What is the difference between ExaSearchRetriever and ExaSearchResults?</summary><p>Retriever fits RAG pipelines and returns Documents. Results is for agent tool use and returns structured results with metadata.</p></details>
+          <details><summary>Does Exa work with LangGraph?</summary><p>Yes. Drop ExaSearchResults into any LangGraph node.</p></details>
+          <details><summary>How does Exa compare to LangChain's built in search tools?</summary><p>LangChain ships generic search wrappers. Exa adds neural retrieval, 1,200 domain filters, and full page content with highlights.</p></details>
+          <details><summary>Can I use Exa with streaming and async LangChain chains?</summary><p>Yes. Async support and streaming both included.</p></details>
+          <details><summary>What does the LangChain plus Exa integration cost?</summary><p>Exa per request pricing. No LangChain license required.</p></details>
         </div>
       </div>
 
@@ -180,7 +150,7 @@ answer = llm.invoke(
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 04</div>
+      <span class="section-eyebrow">Step 04</span>
       <h2>Keyword instances after the optimization</h2>
     </div>
     <div class="kw-chart">
@@ -195,9 +165,9 @@ answer = llm.invoke(
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 05</div>
+      <span class="section-eyebrow">Step 05</span>
       <h2>Schema markup to add</h2>
-      <p class="section-sub">Same three blocks as <a href="/optimization-integrations-openai.html">/integrations/openai</a>. HowTo, FAQPage, SoftwareSourceCode. The HowTo step names change but the schema structure is identical. Implement once as a template, instantiate per integration page.</p>
+      <p class="section-sub">Same three blocks as <a href="/optimization-integrations-openai.html">/integrations/openai</a>. HowTo, FAQPage, SoftwareSourceCode. Implement once as a template, instantiate per integration page.</p>
     </div>
   </section>
 
@@ -208,9 +178,6 @@ answer = llm.invoke(
 </div>
 
 <script>
-document.querySelectorAll(".step-header[data-toggle]").forEach((h) => {
-  h.addEventListener("click", () => h.closest(".step").classList.toggle("open"));
-});
 document.querySelectorAll(".accordion-head[data-toggle]").forEach((h) => {
   h.addEventListener("click", () => h.closest(".accordion").classList.toggle("open"));
 });

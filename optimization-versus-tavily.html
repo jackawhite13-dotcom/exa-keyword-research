@@ -48,15 +48,12 @@
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 02</div>
+      <span class="section-eyebrow">Step 02</span>
       <h2>Title tag and meta description</h2>
     </div>
     <div class="compare">
       <div class="compare-col"><div class="lbl">Current title</div><div class="val mono">Exa vs Tavily: AI Search API Comparison 2026</div></div>
       <div class="compare-col proposed"><div class="lbl">Proposed title</div><div class="val mono">Exa vs Tavily: Neural Search API Comparison (2026)</div></div>
-    </div>
-    <div class="rationale">
-      <b>Why:</b> &ldquo;Neural Search API&rdquo; surfaces Exa's actual technical differentiator and matches the supporting cluster (tavily pricing, tavily search api, tavily alternatives).
     </div>
     <div class="compare">
       <div class="compare-col"><div class="lbl">Current meta description</div><div class="val">Not explicitly set.</div></div>
@@ -66,96 +63,79 @@
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 03</div>
-      <h2>Section by section</h2>
-      <p class="section-sub">Click any step to expand the change detail.</p>
+      <span class="section-eyebrow">Step 03</span>
+      <h2>How the page reads after the changes ship</h2>
+      <p class="section-sub">A scroll through the proposed /versus/tavily page on exa.ai.</p>
     </div>
 
-    <div class="steps">
+    <div class="legend">
+      <span class="legend-item legend-keep"><span class="dot"></span>Keep</span>
+      <span class="legend-item legend-modify"><span class="dot"></span>Modify</span>
+      <span class="legend-item legend-new"><span class="dot"></span>New</span>
+    </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-modify">Modify</span><span class="step-tag">H1</span></div>
-            <h3>Hero</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p><b>Current.</b> H1 &ldquo;Exa vs. Tavily&rdquo;</p>
-          <p><b>Proposed.</b> H1 &ldquo;Exa vs Tavily, Neural Search API Comparison&rdquo;. Sub &ldquo;Updated for Tavily's 2026 acquisition by Nebius. Benchmarks, feature parity, and a drop in migration guide.&rdquo;</p>
+    <div class="mock-page">
+      <div class="mock-chrome">
+        <div class="mock-dots"><span></span><span></span><span></span></div>
+        <div class="mock-url">exa.ai/versus/tavily</div>
+        <div class="mock-tab">Exa vs Tavily: Neural Search API Comparison (2026)</div>
+      </div>
+      <div class="mock-nav">
+        <div class="mock-nav-logo">exa</div>
+        <div class="mock-nav-links"><span>Products</span><span>Resources</span><span>Pricing</span><span>Blog</span><span>Docs</span></div>
+        <div class="mock-nav-cta"><span class="signin">Sign in</span><a class="mock-btn-primary">Try API for free</a></div>
+      </div>
+
+      <div class="mock-section s-modify">
+        <span class="mock-status s-modify">Modify · H1</span>
+        <h1>Exa vs Tavily</h1>
+        <p class="sub">Neural Search API Comparison. Updated for Tavily's 2026 acquisition by Nebius. Benchmarks, feature parity, and a drop in migration guide.</p>
+        <div class="ctas">
+          <a class="mock-btn-primary">Try API for free</a>
+          <a class="mock-btn-secondary">Contact sales</a>
         </div>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-new">New</span><span class="step-tag">H2</span></div>
-            <h3>Tavily after the Nebius acquisition, what changed for buyers</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>New section under the hero, above the existing Accuracy section. Three points.</p>
-          <ul>
-            <li><b>Roadmap exposure.</b> Tavily product priorities now route through Nebius GPU and infrastructure strategy.</li>
-            <li><b>What this means for buyers.</b> Independent feature velocity is not guaranteed. Pricing and SLA terms may shift.</li>
-            <li><b>What Exa offers instead.</b> Independent product roadmap, transparent flat pricing, same SOC 2 Type II posture.</li>
-          </ul>
-          <p>Honest tone, not a hit piece. Buyers will spot one.</p>
+      <div class="mock-section s-new">
+        <span class="mock-status s-new">New section</span>
+        <h2>Tavily after the Nebius acquisition. What changed for buyers.</h2>
+        <p><b>Roadmap exposure.</b> Tavily product priorities now route through Nebius GPU and infrastructure strategy.</p>
+        <p><b>What this means for buyers.</b> Independent feature velocity is not guaranteed. Pricing and SLA terms may shift.</p>
+        <p><b>What Exa offers instead.</b> Independent product roadmap, transparent flat pricing, same SOC 2 Type II posture.</p>
+      </div>
+
+      <div class="mock-section s-keep">
+        <span class="mock-status s-keep">Keep</span>
+        <h2>Accuracy</h2>
+        <div class="mock-benchmark">
+          <table>
+            <thead><tr><th>Benchmark</th><th class="right">Exa</th><th class="right">Tavily</th></tr></thead>
+            <tbody>
+              <tr class="win"><td>WebWalker</td><td class="right">81%</td><td class="right">71%</td></tr>
+              <tr class="win"><td>MKQA</td><td class="right">70%</td><td class="right">63%</td></tr>
+              <tr class="win"><td>FreshQA</td><td class="right">71.6%</td><td class="right">67.4%</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-keep">Keep</span><span class="step-tag">H2</span></div>
-            <h3>Accuracy, Benchmark Results</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>Best content on the page. Three benchmarks all favor Exa. Optional, add a &ldquo;Reproduce these benchmarks&rdquo; link to a GitHub gist for credibility teeth.</p>
-        </div>
+      <div class="mock-section s-keep">
+        <span class="mock-status s-keep">Keep · +1 H3</span>
+        <h2>Key Differentiators</h2>
+        <p class="gray">Six existing H3s stay. Add one new H3: &ldquo;Independent roadmap. Exa is venture backed and unacquired.&rdquo;</p>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-keep">Keep</span><span class="step-tag">H2</span></div>
-            <h3>Key Differentiators (6 H3s)</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>Strong structure. Add one new H3 below the existing six. <b>&ldquo;Independent roadmap, Exa is venture backed and unacquired.&rdquo;</b> Bridges the acquisition framing into a product comparison statement.</p>
-        </div>
+      <div class="mock-section s-keep">
+        <span class="mock-status s-keep">Keep</span>
+        <h2>Feature Comparison</h2>
+        <p class="gray">Existing comparison table. Confirm pricing column reflects current Tavily plans. Refresh quarterly.</p>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-keep">Keep</span><span class="step-tag">H2</span></div>
-            <h3>Feature Comparison</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>Strong table. Confirm pricing column reflects current Tavily plans. Refresh quarterly.</p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-new">New</span><span class="step-tag">H2</span></div>
-            <h3>Migrating from Tavily, drop in guide</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>New section, code led. Show Tavily and Exa side by side so a dev can see in 15 seconds that the migration is a one line change.</p>
-<pre># Tavily
+      <div class="mock-section s-new">
+        <span class="mock-status s-new">New section</span>
+        <h2>Migrating from Tavily. Drop in guide.</h2>
+        <p>Same .search() signature. Swap the import and the API key. Existing prompts and parsing code work without changes.</p>
+        <div class="mock-code"># Tavily
 from tavily import TavilyClient
 client = TavilyClient(api_key="...")
 result = client.search("openai gpt-5 launch date")
@@ -163,29 +143,29 @@ result = client.search("openai gpt-5 launch date")
 # Exa, same shape, neural by default
 from exa_py import Exa
 client = Exa(api_key="...")
-result = client.search("openai gpt-5 launch date")</pre>
-          <p>The single most useful section for an active evaluation buyer. Owns &ldquo;tavily alternative&rdquo; and &ldquo;migrate from tavily&rdquo; long tail.</p>
+result = client.search("openai gpt-5 launch date")</div>
+      </div>
+
+      <div class="mock-section s-modify">
+        <span class="mock-status s-modify">Modify</span>
+        <h2>Frequently asked questions</h2>
+        <p>FAQPage schema attached. Refresh content with the acquisition angle and migration mechanics.</p>
+        <div class="mock-faq">
+          <details open><summary>What changed for Tavily customers after the Nebius acquisition?</summary><p>Tavily's product roadmap now routes through Nebius's GPU and infrastructure strategy. Independent feature velocity is no longer guaranteed.</p></details>
+          <details><summary>Is Tavily still independent, and what does that mean for pricing?</summary><p>Tavily continues to ship product but pricing and SLA terms may shift to reflect Nebius's enterprise positioning.</p></details>
+          <details><summary>How does Exa's accuracy compare to Tavily on real world queries?</summary><p>10 points higher on WebWalker. 7 points higher on MKQA. See benchmarks above.</p></details>
+          <details><summary>Can I migrate from Tavily to Exa in one line of code?</summary><p>Yes. Exa's Python SDK exposes the same .search() signature as Tavily.</p></details>
+          <details><summary>How does Exa's pricing compare to Tavily?</summary><p>Flat per request pricing. No tiers, no overages.</p></details>
+          <details><summary>Which AI agents and LLM frameworks support both Tavily and Exa?</summary><p>OpenAI, LangChain, LlamaIndex, CrewAI, MCP. Migration guides linked.</p></details>
         </div>
       </div>
 
-      <div class="step">
-        <div class="step-header" data-toggle>
-          <div class="step-title-block">
-            <div class="step-eyebrow"><span class="step-status status-modify">Modify</span><span class="step-tag">H2</span></div>
-            <h3>FAQ</h3>
-          </div>
-          <div class="step-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
-        </div>
-        <div class="step-body">
-          <p>Refresh with the acquisition angle and migration mechanics. Six questions.</p>
-          <ul>
-            <li>What changed for Tavily customers after the Nebius acquisition?</li>
-            <li>Is Tavily still independent, and what does that mean for pricing?</li>
-            <li>How does Exa's accuracy compare to Tavily on real world queries?</li>
-            <li>Can I migrate from Tavily to Exa in one line of code?</li>
-            <li>How does Exa's pricing compare to Tavily?</li>
-            <li>Which AI agents and LLM frameworks support both Tavily and Exa?</li>
-          </ul>
+      <div class="mock-section s-keep tint">
+        <span class="mock-status s-keep">Keep</span>
+        <h2>Trusted by the fastest growing AI companies</h2>
+        <div class="mock-customer-row">
+          <span class="lbl">Customers</span>
+          <span>Cognition</span><span>HubSpot</span><span>monday.com</span><span>CodeRabbit</span><span>OpenRouter</span><span>Notion AI</span>
         </div>
       </div>
 
@@ -194,7 +174,7 @@ result = client.search("openai gpt-5 launch date")</pre>
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 04</div>
+      <span class="section-eyebrow">Step 04</span>
       <h2>Keyword instances after the optimization</h2>
     </div>
     <div class="kw-chart">
@@ -209,9 +189,9 @@ result = client.search("openai gpt-5 launch date")</pre>
 
   <section class="section">
     <div class="section-header">
-      <div class="section-eyebrow">Step 05</div>
+      <span class="section-eyebrow">Step 05</span>
       <h2>Schema markup to add</h2>
-      <p class="section-sub">Add FAQPage JSON-LD on the existing FAQ. Optional ComparisonShoppingPage for the feature comparison table.</p>
+      <p class="section-sub">Add FAQPage JSON-LD on the FAQ. Optional ComparisonShoppingPage on the feature comparison table.</p>
     </div>
 
     <div class="accordion">
@@ -231,23 +211,14 @@ result = client.search("openai gpt-5 launch date")</pre>
       "name": "What changed for Tavily customers after the Nebius acquisition?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tavily's product roadmap now routes through Nebius's GPU and infrastructure strategy. Independent feature velocity is no longer guaranteed. Pricing and SLA terms may shift to reflect Nebius's enterprise positioning."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I migrate from Tavily to Exa in one line of code?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Exa's Python SDK exposes the same .search() signature as Tavily's. Swap the import and the API key. Existing prompts and parsing code work without changes."
+        "text": "Tavily's product roadmap now routes through Nebius's GPU and infrastructure strategy. Independent feature velocity is no longer guaranteed."
       }
     }
-    /* 4 more questions */
+    /* 5 more questions */
   ]
 }</pre>
       </div>
     </div>
-
   </section>
 
   <footer class="foot">
@@ -257,9 +228,6 @@ result = client.search("openai gpt-5 launch date")</pre>
 </div>
 
 <script>
-document.querySelectorAll(".step-header[data-toggle]").forEach((h) => {
-  h.addEventListener("click", () => h.closest(".step").classList.toggle("open"));
-});
 document.querySelectorAll(".accordion-head[data-toggle]").forEach((h) => {
   h.addEventListener("click", () => h.closest(".accordion").classList.toggle("open"));
 });
